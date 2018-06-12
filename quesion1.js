@@ -7,4 +7,4 @@ function sortByString(s, t) {
     }).join('');
 }
 
-sortByString("ronen", "goren")
+alert(sortByString("ronen", "goren"))
