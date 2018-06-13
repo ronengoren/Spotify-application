@@ -1,10 +1,11 @@
-// Question 2 -- decodeString(s)
+// Question 2 -- decodeString(s): Given an encoded string, return its corresponding decoded string. 
 
+// The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is repeated exactly k times. Note: k is guaranteed to be a positive integer. 
 
 function decodeString(s) {
-    var regex = /(\d+)\[([a-z]*)\]/g;
-    var str = s.replace(regex, (match, num, group) => group.repeat(num));
-    var testCheck = regex.test(str)
+    let regex = /(\d+)\[([a-z]*)\]/g;
+    let str = s.replace(regex, (match, num, group) => group.repeat(num));
+    let testCheck = regex.test(str)
     if (testCheck) {
         return decodeString(str)
     }
