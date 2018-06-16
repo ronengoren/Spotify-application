@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# Spotify-application
+
+Spotify New York City Technology Fellowship Program
+>>>>>>> 5314072fcfb040a372dc11fb58178a297defba64
