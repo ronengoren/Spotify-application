@@ -71,11 +71,11 @@ function displayCalendar() {
         // if counter is current day.
         // highlight current day using the CSS defined in header.
         if (counter == day) {
-            htmlContent += "<td class='dayNow'  onMouseOver='this.style.background=\"#FF0000\"; this.style.color=\"#FFFFFF\"' " +
-                "onMouseOut='this.style.background=\"#FFFFFF\"; this.style.color=\"#00FF00\"'>" + counter + "</td>";
+            htmlContent += "<td class='dayNow' onclick='alert(\"date\")' onMouseOver='this.style.background=\"#FF0000\"; this.style.color=\"#FFFFFF\"' " +
+                "onMouseOut='this.style.background=\"#FFFFFF\"; this.style.color=\"#00FF00\"'>" + nextMonth + "/" + counter + "/" + year + "</td>";
         } else {
-            htmlContent += "<td class='monthNow' onMouseOver='this.style.background=\"#FF0000\"'" +
-                " onMouseOut='this.style.background=\"#FFFFFF\"'>" + counter + "</td>";
+            htmlContent += "<td class='monthNow' onclick='alert(\"date\")' onMouseOver='this.style.background=\"#FF0000\"'" +
+                " onMouseOut='this.style.background=\"#FFFFFF\"'>" + nextMonth + "/" + counter + "/" + year + "</td>";
 
         }
 
@@ -96,6 +96,12 @@ function displayCalendar() {
     // set the content of div .
     document.getElementById("calendar").innerHTML = calendarBody;
 
+    function modalPopup() {
+        $('#myModal').modal({
+            keyboard: false
+        })
+
+    }
 
     // var clickCount = 0
     // var clickCountMax = 2;
