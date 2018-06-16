@@ -71,10 +71,10 @@ function displayCalendar() {
         // if counter is current day.
         // highlight current day using the CSS defined in header.
         if (counter == day) {
-            htmlContent += "<td class='dayNow' onclick='alert(\"date\")' onMouseOver='this.style.background=\"#FF0000\"; this.style.color=\"#FFFFFF\"' " +
+            htmlContent += "<td class='dayNow' onclick='console.log(\"date\")' onMouseOver='this.style.background=\"#FF0000\"; this.style.color=\"#FFFFFF\"' " +
                 "onMouseOut='this.style.background=\"#FFFFFF\"; this.style.color=\"#00FF00\"'>" + nextMonth + "/" + counter + "/" + year + "</td>";
         } else {
-            htmlContent += "<td class='monthNow' onclick='alert(\"date\")' onMouseOver='this.style.background=\"#FF0000\"'" +
+            htmlContent += "<td class='monthNow' onclick='console.log(\"date\")' onMouseOver='this.style.background=\"#FF0000\"'" +
                 " onMouseOut='this.style.background=\"#FFFFFF\"'>" + nextMonth + "/" + counter + "/" + year + "</td>";
 
         }
