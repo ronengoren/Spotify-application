@@ -1,0 +1,25 @@
+
+ <div class="control-group">
+        <%= form_for Event.create, url: new_event_path, method: :post do |f| %>
+        <%= f.label :start_date, "Start Date :", class: "control-label" %>
+        <div class="controls">
+      <%= f.date_select :start_date, class: 'span11', autofocus: true, :order => [:day, :month, :year], placeholder: 'StartDate' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :end_date, "End Date :", class: "control-label" %>
+        <div class="controls">
+      <%= f.date_select :end_date, class: 'span11', autofocus: true, :order => [:day, :month, :year], placeholder: 'EndDate' %>
+        </div>
+      </div>
+       <div class="control-group">
+        <%= f.label :description, "Description :", class: "control-label" %>
+        <div class="controls">
+      <%= f.text_field :description, class: 'span11', autofocus: true, placeholder: 'Description' %>
+        </div>
+      </div>
+
+      <div class="form-actions">
+      <%= f.submit :Submit, class: "btn btn-success"%>
+        <% end %>
+      </div>

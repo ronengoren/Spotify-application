@@ -1,18 +1,20 @@
 class CalendarsController < ApplicationController
 
     def index
+
+        @events = Event.all
       
       end
 
     def show
-
-        # q = params[:q]
-        # return unless q.present?
-      
-        # uri = URI.parse("https://api.spotify.com/v1/search?" + { q: q, type: 'track' }.to_query)
-        # json = Net::HTTP.get(uri)
-        # @results = JSON.parse(json)["tracks"]["items"]
-
-      
+        @event = Event.all
     end
+    def new
+        @events = Event.new
+      end
+      
+      def create
+      Event.create(event_params)
+    #   redirect_to '/events'
+      end
 end
