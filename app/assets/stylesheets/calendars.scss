@@ -1,44 +1,105 @@
 // Place all the styles related to the Calendars controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.calendar {
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.month {
+    padding: 70px 25px;
     width: 100%;
+    background: #1abc9c;
+    text-align: center;
+    font-family: Verdana, sans-serif;
+    font-size: 40px;
 }
 
-.monthPre {
-    color: gray;
-    text-align: center;
+.month ul {
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
 }
 
-.monthNow {
-    color: blue;
-    text-align: center;
-    height: 100px;
+.month ul li {
+    color: white;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
     font-size: 20px;
 }
 
-.dayNow {
-    border: 2px solid black;
-    color: #FF0000;
-    text-align: center;
-    font-size: 50px;
-}
-
-.calendar td {
-    // htmlContent: 2px;
-    width: 40px;
-}
-
-.monthNow th {
-    background-color: #000000;
-    color: #FFFFFF;
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
     text-align: center;
 }
 
-.dayNames {
-    background: #0FF000;
-    color: #FFFFFF;
+.days {
+    padding: 10px 0;
+    margin: 0;
+    font-size: 40px;
+    height: 80px;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
     text-align: center;
-    font-size: 50px;
-    font-weight: 900;
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+
+.days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+}
+
+
+/* Add media queries for smaller screens */
+
+@media screen and (max-width:720px) {
+    .weekdays li,
+    .days li {
+        width: 13.1%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .weekdays li,
+    .days li {
+        width: 12.5%;
+    }
+    .days li .active {
+        padding: 2px;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .weekdays li,
+    .days li {
+        width: 12.2%;
+    }
 }

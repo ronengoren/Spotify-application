@@ -51,7 +51,7 @@ function displayCalendar() {
 
     // this leave a white space for days of pervious month.
     while (weekdays > 0) {
-        htmlContent += "<td class='monthPre'></td>";
+        htmlContent += "<li class='days'></li>";
 
         // used in next loop.
         weekdays--;
@@ -63,7 +63,7 @@ function displayCalendar() {
         // When to start new line.
         if (weekdays2 > 6) {
             weekdays2 = 0;
-            htmlContent += "</tr><tr>";
+            htmlContent += "</span><span>";
         }
 
 
@@ -71,11 +71,11 @@ function displayCalendar() {
         // if counter is current day.
         // highlight current day using the CSS defined in header.
         if (counter == day) {
-            htmlContent += "<td class='dayNow' onclick='console.log(\"date\")' onMouseOver='this.style.background=\"#FF0000\"; this.style.color=\"#FFFFFF\"' " +
-                "onMouseOut='this.style.background=\"#FFFFFF\"; this.style.color=\"#00FF00\"'>" + nextMonth + "/" + counter + "/" + year + "</td>";
+            htmlContent += "<li class='days' onclick='alert(\"work!\")' onMouseOver='this.style.background=\"#FF0000\"; this.style.color=\"#FFFFFF\"' " +
+                "onMouseOut='this.style.background=\"#FFFFFF\"; this.style.color=\"#00FF00\"'>" + nextMonth + "/" + counter + "/" + year + "</li>";
         } else {
-            htmlContent += "<td class='monthNow' onclick='console.log(\"date\")' onMouseOver='this.style.background=\"#FF0000\"'" +
-                " onMouseOut='this.style.background=\"#FFFFFF\"'>" + nextMonth + "/" + counter + "/" + year + "</td>";
+            htmlContent += "<li class='days' onclick='alert(\"work!\")' onMouseOver='this.style.background=\"#FF0000\"'" +
+                " onMouseOut='this.style.background=\"#FFFFFF\"'>" + nextMonth + "/" + counter + "/" + year + "</li>";
 
         }
 
@@ -86,21 +86,23 @@ function displayCalendar() {
 
 
     // building the calendar html body.
-    var calendarBody = " <table class='calendar'><tr class='monthNow'><th colspan='7'>" +
-        monthNames[month] + " " + year + "</th></tr>";
-    calendarBody += "<tr class='dayNames'>  <td>Sun</td>  <td>Mon</td> <td>Tues</td>" +
-        "<td>Wed</td> <td>Thurs</td> <td>Fri</td> <td>Sat</td> </tr>";
-    calendarBody += "<tr>";
+    var calendarBody = " <ul class='calendar'><li class='month'><div colspan='7'>" +
+        monthNames[month] + " " + year + "</li></ul>";
+    calendarBody += "<ul class='weekdays'>  <li>Sun</li>  <li>Mon</li> <li>Tues</li>" +
+        "<li>Wed</li> <li>Thurs</li> <li>Fri</li> <li>Sat</li> </ul>";
+    calendarBody += "<ul class=\"days\">";
     calendarBody += htmlContent;
-    calendarBody += "</tr></table>";
+    calendarBody += "</ul></ul>";
     // set the content of div .
-    document.getElementById("calendar").innerHTML = calendarBody;
+    document.getElementById("calendargrid").innerHTML = calendarBody;
 
     function modalPopup() {
-        $('#myModal').modal({
-            keyboard: false
+        $('td').on('click', function(e) {
+            $('#myModal').on('show.bs.modal', function(e) {
+                if (!data)
+                    return e.preventDefault() // stops modal from being shown
+            })
         })
-
     }
 
     // var clickCount = 0
