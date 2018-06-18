@@ -1,6 +1,6 @@
 
  <div class="control-group">
-        <%= form_for Event.create, url: new_event_path, method: :post do |f| %>
+        <%= form_for Event.create, url: calendars_path, method: :post do |f| %>
         <%= f.label :start_date, "Start Date :", class: "control-label" %>
         <div class="controls">
       <%= f.date_select :start_date, class: 'span11', autofocus: true, :order => [:day, :month, :year], placeholder: 'StartDate' %>

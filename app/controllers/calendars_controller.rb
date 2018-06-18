@@ -15,6 +15,12 @@ class CalendarsController < ApplicationController
       
       def create
       Event.create(event_params)
-    #   redirect_to '/events'
+    #   redirect_to '/'
+      end
+
+      private
+      
+      def event_params
+        params.require(:event).permit(:start_date, :end_date, :description)
       end
 end

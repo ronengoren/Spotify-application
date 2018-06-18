@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+#   Event.create(description: 'test', start_date: "2018-06-17", end_date: "2018-06-17")
+#   Event.create(description: 'test', start_date: "2018-06-17", end_date: "2018-06-17")
+#   Event.create(description: 'test', start_date: "2018-06-17", end_date: "2018-06-17")
+#   Event.create(description: 'test', start_date: "2018-06-17", end_date: "2018-06-17")
+#   Event.create(description: 'test', start_date: "2018-06-17", end_date: "2018-06-17")
+#   Event.create(description: 'test', start_date: "2018-06-17", end_date: "2018-06-17")
+#   Event.create(description: 'test', start_date: "2018-06-17", end_date: "2018-06-17")
+#   Event.create(description: 'test', start_date: "2018-06-17", end_date: "2018-06-17")
+#   Event.create(description: 'test', start_date: "2018-06-17", end_date: "2018-06-17")
+#   Event.create(description: 'test', start_date: "2018-06-17", end_date: "2018-06-17")
+#   Event.create(description: 'test', start_date: "2018-06-17", end_date: "2018-06-17")
+#   Event.create(description: 'test', start_date: "2018-06-17", end_date: "2018-06-17")
+#   Event.create(description: 'test', start_date: "2018-06-17", end_date: "2018-06-17")

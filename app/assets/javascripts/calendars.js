@@ -72,11 +72,11 @@ function displayCalendar() {
         // highlight current day using the CSS defined in header.
         if (counter == day) {
             htmlContent += "<li class='days' onMouseOver='this.style.background=\"#FF0000\"; this.style.color=\"#FFFFFF\"' " +
-                "onMouseOut='this.style.background=\"#FFFFFF\"; this.style.color=\"#00FF00\"'><button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Open Modal</button>" + nextMonth + "/" + counter + "/" + year + "</li>";
+                "onMouseOut='this.style.background=\"#FFFFFF\"; this.style.color=\"#00FF00\"'><button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Open Modal</button>" + "<br>" + nextMonth + "/" + counter + "/" + year + "</li>";
 
         } else {
             htmlContent += "<li class='days' onMouseOver='this.style.background=\"#FF0000\"'" +
-                " onMouseOut='this.style.background=\"#FFFFFF\"'><button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Open Modal</button>" + nextMonth + "/" + counter + "/" + year + "</li>";
+                " onMouseOut='this.style.background=\"#FFFFFF\"'><button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Open Modal</button>" + "<br>" + nextMonth + "/" + counter + "/" + year + "</li>";
 
 
         }
@@ -108,3 +108,43 @@ function displayCalendar() {
 
 
 }
+
+
+
+
+$(function() {
+
+    $.ajax({
+        type: "GET",
+        data: {
+            apikey: "d2534efb46fbe28c49449d58f2018e9d",
+            f_track_release_group_first_release_date_min: "19860514",
+            f_track_release_group_first_release_date_max: "19860514",
+            format: "jsonp",
+            callback: "jsonp_callback"
+        },
+        url: "http://api.musixmatch.com/ws/1.1/track.search",
+        dataType: "jsonp",
+        jsonpCallback: 'jsonp_callback',
+        contentType: 'application/json',
+        success: function(data) {
+            var artist = "By: " + data.message.body.track_list[2].track.artist_name
+
+            $(".inner").append("<p>" + artist + "</p>");
+            // console.log(data);
+            // console.log(data.message.body.track_list[2].track);
+            // console.log(data.message.body.track_list[2].track.track_name);
+            // console.log("Album Name: " + data.message.body.track_list[2].track.album_name);
+            // console.log("By: " + data.message.body.track_list[2].track.artist_name);
+
+
+            console.log(artist)
+            console.log("you did it")
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR);
+            console.log(textStatus);
+            console.log(errorThrown);
+        }
+    });
+});
