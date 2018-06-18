@@ -8,6 +8,7 @@ class CalendarsController < ApplicationController
 
     def show
         @event = Event.all
+        
     end
     def new
         @events = Event.new

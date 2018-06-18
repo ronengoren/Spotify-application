@@ -1,6 +1,5 @@
 
 
-
 <body onload="displayCalendar()"> 
 
 <div id="calendargrid">
@@ -24,6 +23,21 @@
         </div>
         <div class="modal-body">
           <p><%= render 'events/new', :locals => {:controller => 'events', :action => 'create'}%></p>
+          <% @events.each do |event| %>
+          <h1><%= event.description %></h1>
+          <h1><%= event.start_date %></h1>
+          <h1><%= event.end_date %></h1>
+          <h2>Greetings</h2>
+<div class="container">
+  <div class="inner">Hello</div>
+  <div class="inner">Goodbye</div>
+  <a>spotify link<a/>
+  <span></span>
+</div>
+
+
+
+<% end %>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

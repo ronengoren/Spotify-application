@@ -79,6 +79,7 @@ function displayCalendar() {
                 " onMouseOut='this.style.background=\"#FFFFFF\"'><button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Open Modal</button>" + "<br>" + counter + "</li>";
 
 
+
         }
 
         weekdays2++;
