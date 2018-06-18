@@ -76,7 +76,7 @@ function displayCalendar() {
 
         } else {
             htmlContent += "<li class='alldays' id=" + nextMonth + '-' + counter + '-' + year + " onMouseOver='this.style.background=\"#FF0000\"'" +
-                " onMouseOut='this.style.background=\"#FFFFFF\"'><button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Open Modal</button>" + "<br>" + counter + "</li>";
+                " onMouseOut='this.style.background=\"#FFFFFF\"'><button id=" + nextMonth + '-' + counter + '-' + year + " type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Open Modal</button>" + "<br>" + counter + "</li>";
 
 
 
@@ -87,13 +87,14 @@ function displayCalendar() {
 
     }
 
-    function modalPopup() {
-        console.log('clickCount')
-
-
-    }
-
-    // building the calendar html body.
+    $(document).ready(function() {
+            $("button").click(function() {
+                (this.id)
+                console.log(this.id)
+                $("#start_date").val(this.id);
+            });
+        })
+        // building the calendar html body.
     var calendarBody = " <ul class='calendar'><li class='month'><div colspan='7'>" +
         monthNames[month] + " " + year + "</li></ul>";
     calendarBody += "<ul class='weekdays'>  <li>Sun</li>  <li>Mon</li> <li>Tues</li>" +
