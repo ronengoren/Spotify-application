@@ -3,5 +3,6 @@ class DropEvents < ActiveRecord::Migration[5.2]
     create_table :tests do |t|
 
       t.timestamps
+    end
   end
 end
