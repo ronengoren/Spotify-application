@@ -15,7 +15,11 @@ class CalendarsController < ApplicationController
       
       def create
       Event.create(event_params)
-    #   redirect_to '/'
+      redirect_to calendars_path
+      flash[:notice] = "Thanks for submitting these questions"
+    else
+      return calendars_path
+    
       end
 
       private
