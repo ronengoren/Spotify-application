@@ -75,7 +75,7 @@ function displayCalendar() {
                 "onMouseOut='this.style.background=\"#FFFFFF\"; this.style.color=\"#00FF00\"'><button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Open Modal</button>" + "<br>" + counter + "</li>";
 
         } else {
-            htmlContent += "<li class='alldays' id=" + nextMonth + '-' + counter + '-' + year + " data-dismiss='modal' onMouseOver='this.style.background=\"#FF0000\"'" +
+            htmlContent += "<li class='alldays' id=" + nextMonth + '-' + counter + '-' + year + " onMouseOver='this.style.background=\"#FF0000\"'" +
                 " onMouseOut='this.style.background=\"#FFFFFF\"'><button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Open Modal</button>" + "<br>" + counter + "</li>";
 
 
