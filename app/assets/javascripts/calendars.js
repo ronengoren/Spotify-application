@@ -71,12 +71,12 @@ function displayCalendar() {
         // if counter is current day.
         // highlight current day using the CSS defined in header.
         if (counter == day) {
-            htmlContent += "<li class='days' onMouseOver='this.style.background=\"#FF0000\"; this.style.color=\"#FFFFFF\"' " +
-                "onMouseOut='this.style.background=\"#FFFFFF\"; this.style.color=\"#00FF00\"'><button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Open Modal</button>" + "<br>" + nextMonth + "/" + counter + "/" + year + "</li>";
+            htmlContent += "<li class='daysactive' id=" + nextMonth + '-' + counter + '-' + year + " onMouseOver='this.style.background=\"#FF0000\"; this.style.color=\"#FFFFFF\"' " +
+                "onMouseOut='this.style.background=\"#FFFFFF\"; this.style.color=\"#00FF00\"'><button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Open Modal</button>" + "<br>" + counter + "</li>";
 
         } else {
-            htmlContent += "<li class='days' onMouseOver='this.style.background=\"#FF0000\"'" +
-                " onMouseOut='this.style.background=\"#FFFFFF\"'><button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Open Modal</button>" + "<br>" + nextMonth + "/" + counter + "/" + year + "</li>";
+            htmlContent += "<li class='alldays' id=" + nextMonth + '-' + counter + '-' + year + " data-dismiss='modal' onMouseOver='this.style.background=\"#FF0000\"'" +
+                " onMouseOut='this.style.background=\"#FFFFFF\"'><button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Open Modal</button>" + "<br>" + counter + "</li>";
 
 
         }
@@ -131,11 +131,11 @@ $(function() {
             var artist = "By: " + data.message.body.track_list[2].track.artist_name
 
             $(".inner").append("<p>" + artist + "</p>");
-            // console.log(data);
-            // console.log(data.message.body.track_list[2].track);
-            // console.log(data.message.body.track_list[2].track.track_name);
-            // console.log("Album Name: " + data.message.body.track_list[2].track.album_name);
-            // console.log("By: " + data.message.body.track_list[2].track.artist_name);
+            console.log(data);
+            console.log(data.message.body.track_list[2].track);
+            console.log(data.message.body.track_list[2].track.track_name);
+            console.log("Album Name: " + data.message.body.track_list[2].track.album_name);
+            console.log("By: " + data.message.body.track_list[2].track.artist_name);
 
 
             console.log(artist)
