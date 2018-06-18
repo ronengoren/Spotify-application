@@ -71,10 +71,11 @@ ul {
     font-size: 22px;
 }
 
-.days li .active {
+.daysactive {
     padding: 5px;
-    background: #1abc9c;
-    color: white !important
+    // background: #1abc9c;
+    // color: white !important;
+    border: 1px solid black;
 }
 
 
