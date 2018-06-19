@@ -17,34 +17,17 @@
     
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header" >
+        <h1 id="modalheader"></h1>
           <h4 class="modal-title"></h4>
         </div>
         <div class="modal-body">
           <p><div class='control-group'>
-            <%= form_for Event.create, url: calendars_path, method: :post do |f| %>
-            <%= f.label :start_date, "Start Date :", class: 'control-label', id: 'field-function_purpose' %>
-        <div class='controls'>
-            <%= f.text_field :start_date, class: 'span11', id: 'start_date', autofocus: true, :readonly => true %>
-            </div>
-             </div>
-      <div class='control-group'>
-        <%= f.label :end_date, 'End Date :', class: 'control-label' %>
-        <div class='controls'>
-      <%= f.text_field :end_date, class: 'span11', type: "text", id: 'end_date' , data:{ provide:'datepicker'} %>
-        </div>
-      </div>
-       <div class='control-group'>
-        <%= f.label :description, 'Description :', class: 'control-label' %>
-        <div class="controls">
-      <%= f.text_field :description, class: 'span11', type: "text", autofocus: true, placeholder: 'Description', id: "description" %>
-        </div>
-      </div>
-
-      <div class='form-actions'>
-      <%= f.submit :Submit, class: 'btn btn-success', id: 'submitEvent', remote: true%>
-        <% end %>
-      </div></p>
+          <%= link_to 'New Event', new_event_path, remote: true, id: "ajaxcall" %>
+    
+              <div id="task-form" style="display:none;">
+              </div>
+           
 
         
           
