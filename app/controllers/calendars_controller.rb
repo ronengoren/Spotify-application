@@ -1,5 +1,5 @@
 class CalendarsController < ApplicationController
-
+  skip_before_action :verify_authenticity_token
     def index
 
         @events = Event.all
@@ -22,8 +22,7 @@ class CalendarsController < ApplicationController
       Event.create(event_params)
       redirect_to calendars_path
       puts "Thanks for submitting these questions"
-    else
-      return calendars_path
+   
     
       end
 

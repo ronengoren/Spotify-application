@@ -18,38 +18,37 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title"></h4>
         </div>
         <div class="modal-body">
           <p><div class='control-group'>
             <%= form_for Event.create, url: calendars_path, method: :post do |f| %>
-            <%= f.label :start_date, "Start Date :", class: 'control-label' %>
+            <%= f.label :start_date, "Start Date :", class: 'control-label', id: 'field-function_purpose' %>
         <div class='controls'>
-            <%= f.text_field :start_date, class: 'span11', id: 'start_date', autofocus: true %>
+            <%= f.text_field :start_date, class: 'span11', id: 'start_date', autofocus: true, :readonly => true %>
             </div>
              </div>
       <div class='control-group'>
         <%= f.label :end_date, 'End Date :', class: 'control-label' %>
         <div class='controls'>
-      <%= f.text_field :end_date, class: 'span11', id: 'end_date',  autofocus: true, placeholder: 'mm/dd/yyyy' %>
+      <%= f.text_field :end_date, class: 'span11', type: "text", id: 'end_date' , data:{ provide:'datepicker'} %>
         </div>
       </div>
        <div class='control-group'>
         <%= f.label :description, 'Description :', class: 'control-label' %>
         <div class="controls">
-      <%= f.text_field :description, class: 'span11', autofocus: true, placeholder: 'Description' %>
+      <%= f.text_field :description, class: 'span11', type: "text", autofocus: true, placeholder: 'Description', id: "description" %>
         </div>
       </div>
 
       <div class='form-actions'>
-      <%= f.submit :Submit, class: 'btn btn-success'%>
+      <%= f.submit :Submit, class: 'btn btn-success', id: 'submitEvent', remote: true%>
         <% end %>
       </div></p>
 
         
           
-<div class="container">
+<div class="container" id="musix">
     <div class="track"></div>
   <div class="artist"></div>
   <div class="album"></div>
@@ -57,7 +56,6 @@
   <a>spotify link<a/>
   <span></span>
 </div>
-
 
 
 <%= @specificdate.each do |start_dates| %>
@@ -75,3 +73,6 @@
       
     </div>
   </div>
+
+
+<div id="eventslist"> jshdjsdh</div>

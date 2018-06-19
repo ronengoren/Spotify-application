@@ -2,8 +2,9 @@
 
 
 
-<h1><%= @specificdate.inspect %></h1>
+      <%= link_to 'Sign in with Spotify', '/auth/spotify' %>
 
-<%= @events_by_date.each do |event| %>
-        <li><%= event.start_date %></li>
-      <% end %>
+<%= @tracks.each do |trk| %>
+<h1>  <%= @trk %></h1>
+<% end %>
+
