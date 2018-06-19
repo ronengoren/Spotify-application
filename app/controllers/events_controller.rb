@@ -2,7 +2,8 @@ class EventsController < ApplicationController
     def index
 
         @events = Event.all
-      
+        @specificdate = Event.where(:start_date => "2018-06-22")
+        @events_by_date = Event.joins("")
         response = HTTParty.get("http://api.musixmatch.com/ws/1.1/track.search?apikey=d2534efb46fbe28c49449d58f2018e9d&f_track_release_group_first_release_date_max=19860514&f_track_release_group_first_release_date_min=19860514")
         
 
