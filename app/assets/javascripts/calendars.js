@@ -67,12 +67,12 @@ function displayCalendar() {
     $(document).ready(function() {
             $("button").click(function(e) {
                 e.preventDefault()
-                var eventDate = (this.id)
+                var eventDate = this.id.replace(/-/g, '/');
                 console.log(eventDate)
-                $("#start_date").val(this.id);
+                $("#start_date").val(this.id.replace(/-/g, '/'));
                 var min = year - 90
                 var randomYear = Math.floor(Math.random() * (year - min + 1)) + min;
-                console.log(randomYear)
+                // console.log(randomYear)
                 $(function() {
                     $.ajax({
                         type: "GET",
@@ -83,7 +83,7 @@ function displayCalendar() {
                             format: "jsonp",
                             callback: "jsonp_callback"
                         },
-                        url: "http://api.musixmatch.com/ws/1.1/track.search",
+                        url: "https://api.musixmatch.com/ws/1.1/track.search",
                         dataType: "jsonp",
                         jsonpCallback: 'jsonp_callback',
                         contentType: 'application/json',
@@ -112,8 +112,25 @@ function displayCalendar() {
                             console.log(errorThrown);
                         }
                     });
-                    $("#closemodal").on("click", function() {
-                        location.reload()
+                    $("#submitEvent").on("click", function() {
+                        var val = $('.span11').map(function() {
+                            return $(this).val();
+                        })
+                        console.log(val);
+                        var text1 = $('input').text();
+                        var text = $("input").val(text)
+                            // alert(str)
+                        var ididididi = this.id
+                        $("form").submit(function(event) {
+                            event.preventDefault();
+                            alert(text)
+                        });
+                        $("#musix").remove();
+                        // var target = $(this).attr("href");
+                        // console.log(target)
+                        // $("#myModal .modal-body").load(target, function() {
+                        //     $("#myModal").modal("show");
+                        // });
                         console.log('close btn click on fail modal')
                     })
                 });

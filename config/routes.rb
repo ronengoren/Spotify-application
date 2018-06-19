@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'calendars#index'
+  get '/auth/spotify/callback', to: 'events#spotify'
 
   resources :calendars
   resources :events
