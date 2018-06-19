@@ -3,6 +3,9 @@ class CalendarsController < ApplicationController
     def index
 
         @events = Event.all
+       
+        @dates = Event.select('start_date')
+
       
       end
 
