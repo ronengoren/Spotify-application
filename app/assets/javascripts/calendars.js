@@ -70,6 +70,8 @@ function displayCalendar() {
                 var eventDate = this.id.replace(/-/g, '/');
                 console.log(eventDate)
                 $("#start_date").val(this.id.replace(/-/g, '/'));
+                $("#modalheader").text("Event Page For: " + eventDate);
+
                 var min = year - 90
                 var randomYear = Math.floor(Math.random() * (year - min + 1)) + min;
                 // console.log(randomYear)
@@ -117,20 +119,11 @@ function displayCalendar() {
                             return $(this).val();
                         })
                         console.log(val);
-                        var text1 = $('input').text();
-                        var text = $("input").val(text)
-                            // alert(str)
-                        var ididididi = this.id
-                        $("form").submit(function(event) {
-                            event.preventDefault();
-                            alert(text)
-                        });
+                        // alert(str)
                         $("#musix").remove();
-                        // var target = $(this).attr("href");
-                        // console.log(target)
-                        // $("#myModal .modal-body").load(target, function() {
-                        //     $("#myModal").modal("show");
-                        // });
+                        $("#myModal .modal-body").load(click, function() {
+                            $("#myModal").modal("show");
+                        });
                         console.log('close btn click on fail modal')
                     })
                 });
