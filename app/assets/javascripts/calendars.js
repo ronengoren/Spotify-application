@@ -5,24 +5,17 @@
 
 console.log("lets see")
 
-
-
 function displayCalendar() {
-
-
     var htmlContent = "";
     var FebNumberOfDays = "";
     var counter = 1;
 
-
     var dateNow = new Date();
     var month = dateNow.getMonth();
-
     var nextMonth = month + 1; //+1; //Used to match up the current month with the correct start date.
     var prevMonth = month - 1;
     var day = dateNow.getDate();
     var year = dateNow.getFullYear();
-
 
     //Determing if February (28,or 29)  
     if (month == 1) {
@@ -33,22 +26,16 @@ function displayCalendar() {
         }
     }
 
-
     // names of months and week days.
     var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thrusday", "Friday", "Saturday"];
     var dayPerMonth = ["31", "" + FebNumberOfDays + "", "31", "30", "31", "30", "31", "31", "30", "31", "30", "31"]
-
 
     // days in previous month and next one , and day of week.
     var nextDate = new Date(nextMonth + ' 1 ,' + year);
     var weekdays = nextDate.getDay();
     var weekdays2 = weekdays
     var numOfDays = dayPerMonth[month];
-
-
-
-
     // this leave a white space for days of pervious month.
     while (weekdays > 0) {
         htmlContent += "<li class='days'></li>";
@@ -56,35 +43,25 @@ function displayCalendar() {
         // used in next loop.
         weekdays--;
     }
-
     // loop to build the calander body.
     while (counter <= numOfDays) {
-
         // When to start new line.
         if (weekdays2 > 6) {
             weekdays2 = 0;
             htmlContent += "</span><span>";
         }
-
-
-
         // if counter is current day.
         // highlight current day using the CSS defined in header.
         if (counter == day) {
             htmlContent += "<li class='daysactive' id=" + nextMonth + '-' + counter + '-' + year + " onMouseOver='this.style.background=\"#FF0000\"; this.style.color=\"#FFFFFF\"' " +
-                "onMouseOut='this.style.background=\"#FFFFFF\"; this.style.color=\"#00FF00\"'><button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Open Modal</button>" + "<br>" + counter + "</li>";
+                "onMouseOut='this.style.background=\"#FFFFFF\"; this.style.color=\"#00FF00\"'><button type='button' id=" + nextMonth + '/' + counter + '/' + year + " class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Open Modal</button>" + "<br>" + counter + "</li>";
 
         } else {
             htmlContent += "<li class='alldays' id=" + nextMonth + '-' + counter + '-' + year + " onMouseOver='this.style.background=\"#FF0000\"'" +
-                " onMouseOut='this.style.background=\"#FFFFFF\"'><button id=" + nextMonth + '-' + counter + '-' + year + " type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Open Modal</button>" + "<br>" + counter + "</li>";
-
-
-
+                " onMouseOut='this.style.background=\"#FFFFFF\"'><button id=" + nextMonth + '/' + counter + '/' + year + " type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Open Modal</button>" + "<br>" + counter + "</li>";
         }
-
         weekdays2++;
         counter++;
-
     }
 
     $(document).ready(function() {
@@ -104,13 +81,7 @@ function displayCalendar() {
     calendarBody += "</ul></ul>";
     // set the content of div .
     document.getElementById("calendargrid").innerHTML = calendarBody;
-
-
-
-
-
 }
-
 
 
 
@@ -131,8 +102,13 @@ $(function() {
         contentType: 'application/json',
         success: function(data) {
             var artist = "By: " + data.message.body.track_list[2].track.artist_name
+            var album = "Album: " + data.message.body.track_list[2].track.album_name
+            var track = data.message.body.track_list[2].track.track_name
 
-            $(".inner").append("<p>" + artist + "</p>");
+            $(".artist").append("<p>" + "<a href=#>" + track + "</a>" + "</p>");
+            $(".artist").append("<p>" + "<a href=#>" + artist + "</a>" + "</p>");
+            $(".artist").append("<p>" + "<a href=#>" + album + "</a>" + "</p>");
+
             console.log(data);
             console.log(data.message.body.track_list[2].track);
             console.log(data.message.body.track_list[2].track.track_name);
