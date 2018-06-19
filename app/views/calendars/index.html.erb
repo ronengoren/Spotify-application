@@ -58,14 +58,18 @@
   <span></span>
 </div>
 
-<% @dates.each do |start_dates| %>
-<h1> <%= start_dates.start_date %> </h1>
+
+
+<%= @specificdate.each do |start_dates| %>
+<li> <%= start_dates.start_date %> </li>
+<li> <%= start_dates.description %> </li>
 <% end %>
+
 
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" id="closemodal" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
       

@@ -5,12 +5,13 @@ class CalendarsController < ApplicationController
         @events = Event.all
        
         @dates = Event.select('start_date')
-
-      
+        @specificdate = Event.where(:start_date => "2018-06-22")
       end
+      
 
     def show
         @event = Event.all
+        
         
     end
     def new
@@ -20,7 +21,7 @@ class CalendarsController < ApplicationController
       def create
       Event.create(event_params)
       redirect_to calendars_path
-      flash[:notice] = "Thanks for submitting these questions"
+      puts "Thanks for submitting these questions"
     else
       return calendars_path
     
