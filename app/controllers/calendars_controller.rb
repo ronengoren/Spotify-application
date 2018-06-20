@@ -20,7 +20,7 @@ class CalendarsController < ApplicationController
       
       def create
       Event.create(event_params)
-      redirect_to calendars_path
+      # redirect_to calendars_path
       puts "Thanks for submitting these questions"
    
     

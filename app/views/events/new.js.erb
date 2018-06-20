@@ -1,3 +1,26 @@
 let form = document.getElementById('task-form');
 form.innerHTML = "<%= j (render 'events/new') %>";
 form.style.display = "block";
+var hash = []
+
+    $(document).ready(function() {
+            var newjs = $(".modal-body").attr('id')
+            $("#start_date").val(newjs)
+            console.log(newjs)
+                        });
+
+      $("#submitEvent").on("click", function() {
+                        var val = $('.span11').map(function() {
+                            return $(this).val();
+                        })
+                        hash.push({ "start_date" : val[0], "end_date" : val[1], "description" : val[2] });
+                        console.log(hash);
+                        console.log(val);
+                        $("#musix").remove();
+                        $("#myModal .modal-body").load(click, function() {
+                            $("#myModal").modal("show");
+                        });
+                        console.log(hash);
+
+                        console.log('close btn click on fail modal')
+                    })

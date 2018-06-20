@@ -66,12 +66,16 @@ function displayCalendar() {
 
     $(document).ready(function() {
             $("button").click(function(e) {
-                e.preventDefault()
-                var eventDate = this.id.replace(/-/g, '/');
-                console.log(eventDate)
-                $("#start_date").val(this.id.replace(/-/g, '/'));
-                $("#modalheader").text("Event Page For: " + eventDate);
+                var eventDate = this.id;
+                console.log("eventDate" + eventDate)
+                var startdayid = $("#start_date").val() + this.id
 
+                $("#modalheader").text("Event Page For: " + eventDate);
+                $(".modal-body").attr("id", eventDate);
+
+                $("#start_date").attr(eventDate);
+
+                console.log(" startdayid: " + startdayid)
                 var min = year - 90
                 var randomYear = Math.floor(Math.random() * (year - min + 1)) + min;
                 // console.log(randomYear)
@@ -119,7 +123,6 @@ function displayCalendar() {
                             return $(this).val();
                         })
                         console.log(val);
-                        // alert(str)
                         $("#musix").remove();
                         $("#myModal .modal-body").load(click, function() {
                             $("#myModal").modal("show");
