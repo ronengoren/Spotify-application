@@ -1,0 +1,23 @@
+
+ 
+ <%= form_for Event.create, url: calendars_path, method: :post do |f| %>
+        <div class='controls'>
+            <%= f.hidden_field :start_date, class: 'span11', id: 'start_date', autofocus: true, remote: true, :readonly => true %>
+            </div>
+             </div>
+      <div class='control-group'>
+        <div class='controls'>
+      <%= f.hidden_field :end_date, class: 'span11', id: 'end_date', remote: true, :readonly => true %>
+        </div>
+      </div>
+       <div class='control-group'>
+        <%= f.label :description, 'Description :', class: 'control-label' %>
+        <div class="controls">
+      <%= f.text_field :description, class: 'span11', type: "text", autofocus: true, placeholder: 'Description', id: "description" %>
+        </div>
+      </div>
+
+      <div class='form-actions'>
+      <%= f.submit :Submit, class: 'btn btn-success', id: 'submitEvent', remote: true%>
+        <% end %>
+      </div></p>
