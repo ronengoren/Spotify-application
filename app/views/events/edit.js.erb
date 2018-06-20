@@ -1,0 +1,9 @@
+console.log('I am hitting the js file for edit')
+
+let taskdiv = document.getElementById('event-<%= @events.id%>')
+
+console.log("Current event clicked " + taskdiv.innerText)
+
+$(taskdiv).replaceWith("<%= j (render 'events/new_event') %>");
+
+taskdiv.style.display = "block";

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "spotify-calendar-207816",
+  "private_key_id": "fa39bc53a61ce8d161f385904fbc7523cb85fbee",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCXJEvqbV332sHK\n1Yh9z56+3UgxzDZrwOP9W6LyfibaCxSZKe2SWjTnjxR0pyGiSaaO3XXGNSn/chmt\nyL8l4UbQLC4skrbEUspcrqik3QftmDc2oRgrwK6DDHYZv/622U7hvivxTbRezufg\neo0UdSXWFwBPReaLy3Ms0//2KowWfOgGe4oZjiYHhEeK4uLMaz+vuN57OWwkNW7U\ni/SSI3Zg/gdbN4pteUtSxD3yVTMimSsyb5KzWQI6MpyyZhsYkd30sSf3b5o++vWM\nuuFuvvyf9bK6SkUKEPbJj0B58jdO7MY9UfDhyPzIFmTOCtaYxlPzU6T/O9A8Xyz7\nHe/ITZBPAgMBAAECggEAGjThcur2vaixLH3c9k+fK2IMCBJsJz/haEdQ2DIWg30j\nW7Fg75zzimkNN3LZSp3xotj0eGM0foXmvPLPbf6DPEpE0Va5GQ5v5yUjub5XhxN7\nE15YZhG5UKDDA5D+Ve8VFeBXFzaNfVjr7MjjGHZ9koMXeydYI8oplM7HlYPoGWfX\nzlz6BmrzrQWsGIFs6E6lv9hSk7Nc7+EPm1J4C8/+81y1MI2GJs9Xa7WjxAwZ/j2G\n7/W7odOIMGQDzqpqOQs3bP7gIUUMGriE5dLujPYw1J2rilOjfzM2wR9plJuKdKsz\nZv+UBdiB1OorFQtNrf9XZC2dfw1Odnc2nQMKoRZ7rQKBgQDFzErTQglqMN9aoVuv\nJ8cNOZZ+or0fpwLA+z5h8J3ZlrtjLOKPbRZ4hPJzfiF1LhUjHFQc6+WBbT6oN4Wk\noIHqvgnNrFx5xdphVxTRKrDITzHoeMz6u+xx3E1bz/+HpuhFxwBAKtn39qs48vBK\nOX6ylgc8qL/N0f9wN2GOAGb2EwKBgQDDnX0QpzfpBP0CIT11GAHm9Ug/BXyzgWCD\nX9n17eFrpdnfWHo/t2rIMSgTHVjsjBMA1SHEEyR5Pn2nk18NN8Sa3TWu+UgmZF1b\niC9R4b95BRHemVK3PoxgJy9htOH64n9Yy/MSMjUq+K93QNJIqv8xdG9SjJoM8PzZ\nBW+i35Y0VQKBgCoo9lX7QGh7DFCUDifScbIW8UYCyA8EGSkrJEvZ7rtfTofAHHZ3\nyQ9dPxRw8Q66CNVYB3G2sk+ZCn7ufrTtZWO0qABH2do22upellhTIiVABCJKBV74\nSVinnXGRbyTp5Z5h4WLL/3PEBxD3b1JS2PeV1OsQCPoE5c50b33GBiwzAoGAQZjZ\nbLE2nYyPr5wn+NFBKgsM3B1h8OwsykFlXQQVeLzYL/6CmEVQqKtbTfWkcUaTxM60\nEQV+UK41AvH3iP4vjuMpcnCj0kQLznr/q0yxocqicGwoAc0W09OwHurCcRhtLgDO\nlUaC79MPPEVffwDgrNvnzN3bdwWFNN2OzyZ9PzUCgYEAnaCW5z3aW7KOh4cHe1M7\n5ItvgrX/MX8nASVrhByVY4YmFYzdWCKLSfESfDpkR8q1N1KdXgjpBp7pzYONsjAX\nwOkjLo4bHwZ2cQOjyJBUGXnyB8sBk20XOXxJywiUFrN1qIlPko25zVWfZ2tLVt7l\nTb1BeBPM30gyQhdzMdosyuY=\n-----END PRIVATE KEY-----\n",
+  "client_email": "ronen-goren-calendar@spotify-calendar-207816.iam.gserviceaccount.com",
+  "client_id": "104350730489053745311",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ronen-goren-calendar%40spotify-calendar-207816.iam.gserviceaccount.com"
+}

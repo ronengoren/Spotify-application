@@ -54,11 +54,11 @@ function displayCalendar() {
         // highlight current day using the CSS defined in header.
         if (counter == day) {
             htmlContent += "<li class='daysactive' id=" + nextMonth + '-' + counter + '-' + year + " onMouseOver='this.style.background=\"#FF0000\"; this.style.color=\"#FFFFFF\"' " +
-                "onMouseOut='this.style.background=\"#FFFFFF\"; this.style.color=\"#00FF00\"'><button type='button' id=" + nextMonth + '-' + counter + '-' + year + " class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Open Modal</button>" + "<br>" + counter + "</li>";
+                "onMouseOut='this.style.background=\"#FFFFFF\"; this.style.color=\"#00FF00\"'><button type='button' id=" + nextMonth + '-' + counter + '-' + year + " class='btn btn-info btn-lg' data-toggle='modal' data-backdrop='static' data-target='#myModal'>Open Modal</button>" + "<br>" + counter + "</li>";
 
         } else {
             htmlContent += "<li class='alldays' id=" + nextMonth + '-' + counter + '-' + year + " onMouseOver='this.style.background=\"#FF0000\"'" +
-                " onMouseOut='this.style.background=\"#FFFFFF\"'><button id=" + nextMonth + '-' + counter + '-' + year + " type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Open Modal</button>" + "<br>" + counter + "</li>";
+                " onMouseOut='this.style.background=\"#FFFFFF\"'><button id=" + nextMonth + '-' + counter + '-' + year + " type='button' data-backdrop='static' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Open Modal</button>" + "<br>" + counter + "</li>";
         }
         weekdays2++;
         counter++;
@@ -69,9 +69,16 @@ function displayCalendar() {
                 var eventDate = this.id;
                 console.log("eventDate" + eventDate)
                 var startdayid = $("#start_date").val() + this.id
-
+                var valjs = $(".modal-body").val('id')
+                console.log(valjs)
                 $("#modalheader").text("Event Page For: " + eventDate);
                 $(".modal-body").attr("id", eventDate);
+                $.ajax('/calendars', {
+                    event: {
+                        start_date: eventDate
+                    },
+                    success: function(data) {}
+                })
 
                 $("#start_date").attr(eventDate);
 

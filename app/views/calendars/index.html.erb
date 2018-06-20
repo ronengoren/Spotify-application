@@ -25,11 +25,13 @@
           <p><div class='control-group'>
           <%= link_to 'New Event', new_event_path, remote: true, id: "ajaxcall" %>
     
+                     
               <div class="startvalue" id="task-form" style="display:none;">
               </div>
            
+   <div id="my-tasks">
 
-        
+             </div><br>
           
 <div class="container" id="musix">
     <div class="track"></div>
@@ -40,11 +42,11 @@
   <span></span>
 </div>
 
+<% @specificdate.each do |variable| %>
+<div id="eventslist"><li> <%=  variable.description %> <%=  variable.start_date %></li></div>
 
-<%= @specificdate.each do |start_dates| %>
-<li> <%= start_dates.start_date %> </li>
-<li> <%= start_dates.description %> </li>
 <% end %>
+
 
 
 
@@ -58,4 +60,3 @@
   </div>
 
 
-<div id="eventslist"> jshdjsdh</div>

@@ -4,8 +4,10 @@ form.style.display = "block";
 var hash = []
 
     $(document).ready(function() {
+    console.log(hash)
             var newjs = $(".modal-body").attr('id')
-            $("#start_date").val(newjs)
+            $("#start_date").val(newjs) 
+            $("#end_date").val(newjs) 
             console.log(newjs)
                         });
 
@@ -14,13 +16,22 @@ var hash = []
                             return $(this).val();
                         })
                         hash.push({ "start_date" : val[0], "end_date" : val[1], "description" : val[2] });
-                        console.log(hash);
-                        console.log(val);
+                        var abc = []
+                        var get =  JSON.parse(localStorage.getItem('hash'));
+                        abc = [get];
+                        abc.push(hash);
+                        localStorage.setItem('hash', JSON.stringify(abc));
+                        console.log(JSON.stringify(abc));
+                        var ifinclude = abc.includes(newjs);
+                        console.log("dfhdfg" + ifinclude)
                         $("#musix").remove();
                         $("#myModal .modal-body").load(click, function() {
-                            $("#myModal").modal("show");
+                            $("#myModal").modal({"backdrop": "static"});
                         });
-                        console.log(hash);
 
                         console.log('close btn click on fail modal')
                     })
+
+function checkDated(){
+console.log("yahooza")
+}                    
