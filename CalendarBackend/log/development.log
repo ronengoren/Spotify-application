@@ -1,0 +1,456 @@
+Started GET "/" for 127.0.0.1 at 2018-06-20 23:34:15 -0400
+  
+RuntimeError (YAML syntax error occurred while parsing /Users/nycda/Desktop/myevents/config/database.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Error: (<unknown>): mapping values are not allowed in this context at line 20 column 8):
+  
+railties (5.2.0) lib/rails/application/configuration.rb:190:in `rescue in database_configuration'
+railties (5.2.0) lib/rails/application/configuration.rb:165:in `database_configuration'
+activerecord (5.2.0) lib/active_record/railtie.rb:133:in `block (2 levels) in <class:Railtie>'
+activesupport (5.2.0) lib/active_support/lazy_load_hooks.rb:71:in `instance_eval'
+activesupport (5.2.0) lib/active_support/lazy_load_hooks.rb:71:in `block in execute_hook'
+activesupport (5.2.0) lib/active_support/lazy_load_hooks.rb:62:in `with_execution_control'
+activesupport (5.2.0) lib/active_support/lazy_load_hooks.rb:67:in `execute_hook'
+activesupport (5.2.0) lib/active_support/lazy_load_hooks.rb:52:in `block in run_load_hooks'
+activesupport (5.2.0) lib/active_support/lazy_load_hooks.rb:51:in `each'
+activesupport (5.2.0) lib/active_support/lazy_load_hooks.rb:51:in `run_load_hooks'
+activerecord (5.2.0) lib/active_record/base.rb:328:in `<module:ActiveRecord>'
+activerecord (5.2.0) lib/active_record/base.rb:27:in `<main>'
+bootsnap (1.3.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21:in `require'
+bootsnap (1.3.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21:in `block in require_with_bootsnap_lfi'
+bootsnap (1.3.0) lib/bootsnap/load_path_cache/loaded_features_index.rb:65:in `register'
+bootsnap (1.3.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:20:in `require_with_bootsnap_lfi'
+bootsnap (1.3.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:29:in `require'
+activesupport (5.2.0) lib/active_support/dependencies.rb:283:in `block in require'
+activesupport (5.2.0) lib/active_support/dependencies.rb:249:in `load_dependency'
+activesupport (5.2.0) lib/active_support/dependencies.rb:283:in `require'
+activerecord (5.2.0) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-06-20 23:35:44 -0400
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "myevents_development" does not exist
+):
+  
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:688:in `rescue in connect'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:683:in `connect'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:215:in `initialize'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:40:in `new'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:40:in `postgresql_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:809:in `new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:832:in `try_to_checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:793:in `acquire_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:521:in `checkout'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:380:in `connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:1008:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.0) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (773.7ms)[0m  [1m[35mCREATE DATABASE "myevents_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (671.3ms)[0m  [1m[35mCREATE DATABASE "myevents_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2018-06-20 23:36:58 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (7.2ms)
+Completed 200 OK in 36ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-20 23:37:08 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (5.6ms)
+Completed 200 OK in 21ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2018-06-20 23:37:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (85.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (60.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(470875100758724970)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateEvents (20180621033838)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (60.8ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "description" character varying, "start_date" date, "end_date" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180621033838_create_events.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180621033838"]]
+  ↳ bin/rails:9
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-06-21 03:39:23.462804"], ["updated_at", "2018-06-21 03:39:23.462804"]]
+  ↳ bin/rails:9
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(470875100758724970)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mEvent Create (20.6ms)[0m  [1m[32mINSERT INTO "events" ("description", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Ego Dominus Tuus"], ["start_date", "2018-06-19"], ["end_date", "2018-06-20"], ["created_at", "2018-06-21 03:46:26.881566"], ["updated_at", "2018-06-21 03:46:26.881566"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (15.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("description", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "The Needle's Eye"], ["start_date", "2018-06-19"], ["end_date", "2018-06-20"], ["created_at", "2018-06-21 03:46:26.921966"], ["updated_at", "2018-06-21 03:46:26.921966"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (12.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("description", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Nine Coaches Waiting"], ["start_date", "2018-06-19"], ["end_date", "2018-06-20"], ["created_at", "2018-06-21 03:46:26.939542"], ["updated_at", "2018-06-21 03:46:26.939542"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mEvent Create (1.4ms)[0m  [1m[32mINSERT INTO "events" ("description", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Mother Night"], ["start_date", "2018-06-19"], ["end_date", "2018-06-19"], ["created_at", "2018-06-21 03:46:26.952460"], ["updated_at", "2018-06-21 03:46:26.952460"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "events" ("description", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "An Evil Cradling"], ["start_date", "2018-06-20"], ["end_date", "2018-06-19"], ["created_at", "2018-06-21 03:46:26.964638"], ["updated_at", "2018-06-21 03:46:26.964638"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-06-20 23:58:21 -0400
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/Users/nycda/Desktop/myevents/app/controllers/api/v1/events_controller.rb:16: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/events_controller.rb:16: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-06-20 23:59:14 -0400
+Processing by Api::V1::EventsController#index as */*
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant Api::V1::EventsController::Evant):
+  
+app/controllers/api/v1/events_controller.rb:7:in `index'
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-06-21 00:00:01 -0400
+Processing by Api::V1::EventsController#index as */*
+  [1m[36mEvent Load (16.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY start_date DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY start_date DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 182ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY start_date DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+NameError (undefined local variable or method `events' for #<Api::V1::EventsController:0x00007f8d06d65610>
+Did you mean?  @events):
+  
+app/controllers/api/v1/events_controller.rb:8:in `index'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY start_date DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-06-21 00:00:48 -0400
+Processing by Api::V1::EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY start_date DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY start_date DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 190ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY start_date DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+NameError (undefined local variable or method `ok' for #<Api::V1::EventsController:0x00007f8d079d15c0>):
+  
+app/controllers/api/v1/events_controller.rb:8:in `index'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY start_date DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Started GET "/api/v1/events" for 127.0.0.1 at 2018-06-21 00:02:16 -0400
+Processing by Api::V1::EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY start_date DESC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:8
+Completed 200 OK in 32ms (Views: 14.7ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/api/v1/events/1" for 127.0.0.1 at 2018-06-21 00:03:20 -0400
+Processing by Api::V1::EventsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (5.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:13
+Completed 204 No Content in 35ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/api/v1/events/1" for 127.0.0.1 at 2018-06-21 00:03:58 -0400
+Processing by Api::V1::EventsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:13
+Completed 200 OK in 24ms (Views: 0.9ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-06-21 00:12:32 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"description"=>"Test event 1", "start_date"=>"2018-09-01", "end_date"=>"2018-09-01", "event"=>{"description"=>"Test event 1", "start_date"=>"2018-09-01", "end_date"=>"2018-09-01"}}
+Unpermitted parameter: :event
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("description", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Test event 1"], ["start_date", "2018-09-01"], ["end_date", "2018-09-01"], ["created_at", "2018-06-21 04:12:32.801953"], ["updated_at", "2018-06-21 04:12:32.801953"]]
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[35m (10.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+Completed 200 OK in 30ms (Views: 0.8ms | ActiveRecord: 23.6ms)
+
+
+Started DELETE "/api/v1/events/6" for 127.0.0.1 at 2018-06-21 00:15:47 -0400
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:32
+  [1m[36mEvent Destroy (0.4ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/api/v1/events_controller.rb:32
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:32
+Completed 204 No Content in 38ms (ActiveRecord: 16.7ms)
+
+
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-06-21 00:16:08 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"description"=>"Test event 1", "start_date"=>"2018-09-01", "end_date"=>"2018-09-01", "event"=>{"description"=>"Test event 1", "start_date"=>"2018-09-01", "end_date"=>"2018-09-01"}}
+Unpermitted parameter: :event
+Completed 500 Internal Server Error in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  
+app/controllers/api/v1/events_controller.rb:19:in `create'
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-06-21 00:16:47 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"description"=>"Test event 1", "start_date"=>"2018-09-01", "end_date"=>"2018-09-01", "event"=>{"description"=>"Test event 1", "start_date"=>"2018-09-01", "end_date"=>"2018-09-01"}}
+Unpermitted parameter: :event
+Completed 500 Internal Server Error in 14ms (Views: 1.1ms | ActiveRecord: 3.7ms)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  
+app/controllers/api/v1/events_controller.rb:19:in `create'
+Started POST "/api/v1/events" for 127.0.0.1 at 2018-06-21 00:17:33 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"description"=>"Test event 1", "start_date"=>"2018-09-01", "end_date"=>"2018-09-01", "event"=>{"description"=>"Test event 1", "start_date"=>"2018-09-01", "end_date"=>"2018-09-01"}}
+Unpermitted parameter: :event
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[36mEvent Create (1.5ms)[0m  [1m[32mINSERT INTO "events" ("description", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Test event 1"], ["start_date", "2018-09-01"], ["end_date", "2018-09-01"], ["created_at", "2018-06-21 04:17:33.128881"], ["updated_at", "2018-06-21 04:17:33.128881"]]
+  ↳ app/controllers/api/v1/events_controller.rb:20
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:20
+Completed 200 OK in 19ms (Views: 0.8ms | ActiveRecord: 12.0ms)
+
+
+Started DELETE "/api/v1/events/6" for 127.0.0.1 at 2018-06-21 00:18:00 -0400
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:31
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=6):
+  
+app/controllers/api/v1/events_controller.rb:31:in `destroy'
+Started DELETE "/api/v1/events/7" for 127.0.0.1 at 2018-06-21 00:18:13 -0400
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:31
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:32
+  [1m[36mEvent Destroy (4.0ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/api/v1/events_controller.rb:32
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:32
+Completed 200 OK in 24ms (Views: 1.2ms | ActiveRecord: 12.4ms)
+
+
+Started PUT "/api/v1/events/5" for 127.0.0.1 at 2018-06-21 00:23:34 -0400
+  
+SyntaxError (/Users/nycda/Desktop/myevents/app/controllers/api/v1/events_controller.rb:58: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/events_controller.rb:58: syntax error, unexpected end-of-input, expecting keyword_end
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	
+	 "description": "edited Test event 1",
+        "start_date": "2018-09-02",
+        "end_date": "2018-09-02",
+}
+Started PUT "/api/v1/events/5" for 127.0.0.1 at 2018-06-21 00:24:03 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	
+	 "description": "edited Test event 1",
+        "start_date": "2018-09-02",
+        "end_date": "2018-09-02",
+}
+  
+ActionDispatch::Http::Parameters::ParseError (765: unexpected token at '{
+	
+	 "description": "edited Test event 1",
+        "start_date": "2018-09-02",
+        "end_date": "2018-09-02",
+}'):
+  
+actionpack (5.2.0) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.0) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.0) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.5) lib/rack/request.rb:57:in `fetch'
+rack (2.0.5) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.2.0) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.0) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.0) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PUT "/api/v1/events/5" for 127.0.0.1 at 2018-06-21 00:24:34 -0400
+Processing by Api::V1::EventsController#update as */*
+  Parameters: {"description"=>"edited Test event 1", "start_date"=>"2018-09-02", "end_date"=>"2018-09-02", "id"=>"5", "event"=>{"description"=>"edited Test event 1", "start_date"=>"2018-09-02", "end_date"=>"2018-09-02"}}
+  [1m[36mEvent Load (3.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:39
+Unpermitted parameters: :id, :event
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:40
+  [1m[36mEvent Update (0.5ms)[0m  [1m[33mUPDATE "events" SET "description" = $1, "start_date" = $2, "end_date" = $3, "updated_at" = $4 WHERE "events"."id" = $5[0m  [["description", "edited Test event 1"], ["start_date", "2018-09-02"], ["end_date", "2018-09-02"], ["updated_at", "2018-06-21 04:24:34.392991"], ["id", 5]]
+  ↳ app/controllers/api/v1/events_controller.rb:40
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:40
+Completed 200 OK in 79ms (Views: 0.8ms | ActiveRecord: 59.5ms)
+
+
