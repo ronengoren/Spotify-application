@@ -16,6 +16,7 @@
         "babel-preset-react": "^6.24.1",
         "babel-register": "^6.9.0",
         "cross-env": "^1.0.8",
+        "date-fns": "^1.29.0",
         "expect": "^1.20.1",
         "node-libs-browser": "^1.0.0",
         "node-sass": "^3.8.0",
