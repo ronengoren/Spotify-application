@@ -1,0 +1,3 @@
+[submodule "calendar-spotify-front"]
+	path = calendar-spotify-front
+	url = /calendar-spotify-front
