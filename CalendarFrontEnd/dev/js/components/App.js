@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-import React, {Component} from 'react';
-import "../../scss/style.scss";
-class App extends Component{
-  render(){
-    return(
-      <div> 
-      Navbar
-      {this.props.children}
-      </div> 
-    )
-
-  }
-}
-
-export default App;
-=======
 import React from "react";
 import Calendar from "./Calendar";
 import "../../scss/style.scss";
@@ -57,4 +40,3 @@ class App extends React.Component {
 
 export default App;
 
->>>>>>> ronen
