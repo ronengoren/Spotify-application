@@ -9,7 +9,10 @@ import promise from 'redux-promise';
 import createLogger from 'redux-logger';
 import allReducers from './reducers';
 import App from './components/App';
+import Calendar from './components/Calendar';
+
 import routes from './routes'; 
+
 
 const logger = createLogger();
 const store = createStore(
