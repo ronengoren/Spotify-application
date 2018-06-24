@@ -43,5 +43,5 @@ class EventsHome extends Component {
         return {events: state.events.all } 
       }
       
-export default connect(mapStateToProps, {getEvents: getEvents})(EventsHome); 
+export default EventsHome; connect(mapStateToProps, {getEvents: getEvents})(EventsHome); 
 

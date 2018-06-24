@@ -3,45 +3,64 @@ import {reduxForm} from 'redux-form';
 import {createEvent} from '../actions/index'; 
 
 class NewEvent extends Component{
-    static contextTypes = {
-        router: PropTypes.object
-      }
-
-    onSubmit(props){
-        this.props.createEvent(props)
-          .then(() => {
-            this.context.router.push('/');
-          });
-      }
-
-
+  static contextTypes = {
+    router: PropTypes.object
+  }
   onSubmit(props){
     this.props.createEvent(props)
       .then(() => {
         this.context.router.push('/');
       });
   }
-
-  render(){
-    const {fields:{title}, handleSubmit} = this.props; 
+  render() {
+        const {fields:{title}, handleSubmit} = this.props; 
 
     return(
       <div className="container">
-
       <h1> Create a new Event </h1> 
-
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
 
-        <div className="form-group">
-          <label>Title</label>
-          <input type="text" className="form-control" {...title} />
-        </div>
-        <button type="submit" className="btn btn-success">Create</button>
-      </form>
-
+      <div className="form-group">
+         <label>Title</label>
+        <input type="text" className="form-control" {...title} />
+       </div>
+       <button type="submit" className="btn btn-success">Create</button>
+     </form>
       </div>
     );
   }
+
+
+
+
+
+  // onSubmit(props){
+  //   this.props.createEvent(props)
+  //     .then(() => {
+  //       this.context.router.push('/');
+  //     });
+  // }
+
+  // render(){
+  //   const {fields:{title}, handleSubmit} = this.props; 
+
+  //   return(
+  //     <div className="container">
+
+  //     <h1> Create a new Event </h1> 
+
+  //     <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+
+  //       <div className="form-group">
+  //         <label>Title</label>
+  //         <input type="text" className="form-control" {...title} />
+  //       </div>
+  //       <button type="submit" className="btn btn-success">Create</button>
+  //     </form>
+
+  //     </div>
+  //   );
+  // }
 }
 
 export default reduxForm({

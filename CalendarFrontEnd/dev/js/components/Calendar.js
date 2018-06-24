@@ -1,7 +1,52 @@
-import React from "react";
+import React, {Component} from 'react';
 import dateFns from "date-fns";
+// import Moment from '/moment';
+import {connect} from 'react-redux';
+import {getEvents} from '../actions/index'; 
+import {Link} from 'react-router'; 
+// import ReactDOM from 'react-dom';
 
-class Calendar extends React.Component {
+import "../../scss/style.scss";
+
+
+class Calendar extends Component {
+  componentWillMount(){
+    this.props.getEvents();  
+  } 
+  renderEvents(){
+    return(
+        <div className="container">
+        <div className="link">
+        <div>
+        <Link to="events/new" className="btn btn-warning">
+        Create Event
+        </Link> 
+        </div>
+        Event Home Page
+        
+           </div>
+        </div>
+      );
+    }
+  render() {
+    return(
+        <div className="container">
+        <div className="link">
+        <div>
+        <Link to="events/new" className="btn btn-warning">
+        Create Event
+        </Link> 
+        </div>
+        Event Home Page
+        <ul className="list-group">
+           {this.renderEvents()}
+           </ul>
+           </div>
+        </div>
+      );
+    }
+ 
+    
   state = {
     currentMonth: new Date(),
     selectedDate: new Date()
@@ -73,7 +118,10 @@ class Calendar extends React.Component {
             onClick={() => this.onDateClick(dateFns.parse(cloneDay))}
           >
             <span className="number">{formattedDate}</span>
-            <span className="bg">{formattedDate}</span>
+            <span className="bg">{formattedDate}
+            </span>
+            
+            
           </div>
         );
         day = dateFns.addDays(day, 1);
@@ -112,9 +160,19 @@ class Calendar extends React.Component {
         {this.renderHeader()}
         {this.renderDays()}
         {this.renderCells()}
+            <div>
+        {this.renderEvents()}
+          </div>
+          <br></br>
       </div>
     );
   }
+  
 }
 
-export default Calendar;
+
+function mapStateToProps(state){
+  return {events: state.events.all } 
+}
+
+export default connect(mapStateToProps, {getEvents: getEvents})(Calendar); 

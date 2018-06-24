@@ -1,5 +1,6 @@
 
-
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
 $primary: #006699;
 /* FONT IMPORTS */
@@ -8,9 +9,6 @@ h2 {
 	color: $primary;
 }
 
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
-@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
 .icon {
   font-family: 'Material Icons', serif;
@@ -238,4 +236,18 @@ main {
   flex-grow: 0;
   flex-basis: calc(100%/7);
   width: calc(100%/7);
+}
+
+// .events {
+//   display: block;
+//   position: relative;
+//   width: 100%;
+//   background: var(--neutral-color);
+//   border: 1px solid var(--border-color);
+//   height: 400px;
+// }
+
+.link {
+
+  margin-top: 100px;
 }
