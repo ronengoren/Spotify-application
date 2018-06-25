@@ -4,7 +4,7 @@ module Api
           before_action :set_event, only: [:show, :destroy] 
   
           def index
-          render json: Event.all
+          render json: Event.order(:start_date)
           end 
   
            def create
@@ -31,7 +31,7 @@ module Api
             end 
   
             def event_params
-              params.permit(:title)
+              params.permit(:title, :start_date)
             end 
         end 
     end 

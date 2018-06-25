@@ -13,7 +13,7 @@ class NewEvent extends Component{
       });
   }
   render() {
-        const {fields:{title}, handleSubmit} = this.props; 
+        const {fields:{title, start_date}, handleSubmit} = this.props; 
 
     return(
       <div className="container">
@@ -21,9 +21,14 @@ class NewEvent extends Component{
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
 
       <div className="form-group">
-         <label>Title</label>
+         <label>Description:</label>
         <input type="text" className="form-control" {...title} />
+        <label>Date Selected:</label>
+
+        <input type="text" className="form-control" {...start_date} />
+
        </div>
+       
        <button type="submit" className="btn btn-success">Create</button>
      </form>
       </div>

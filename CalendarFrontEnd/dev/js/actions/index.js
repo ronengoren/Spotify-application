@@ -29,7 +29,7 @@ export function getEvents(){
   }
 
   export function getEvent(id){
-    const request = axios.get(`${API_URL}/event/${id}`);
+    const request = axios.get(`${API_URL}/events/${id}`);
   
     return{
       type: GET_EVENT,

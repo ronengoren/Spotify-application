@@ -22,10 +22,7 @@ class App extends Component{
               </span>
             </div>
           </header>
-          <main>
-            {/* <Calendar />
-            <EventsHome /> */}
-          </main>
+        
         </div>
       );
     }
