@@ -3,8 +3,9 @@ import dateFns from "date-fns";
 // import Moment from '/moment';
 import {connect} from 'react-redux';
 import {getEvents} from '../actions/index'; 
+import {getEvent} from '../actions/index'; 
 import {Link} from 'react-router'; 
-// import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom';
 
 import "../../scss/style.scss";
 
@@ -14,28 +15,27 @@ class Calendar extends Component {
     this.props.getEvents();  
   } 
   renderEvents(){
-    return(
-        <div className="container">
-        <div className="link">
-        <div>
-        <Link to="events/new" className="btn btn-warning">
+    return this.props.events.map((event) => {
+      return (
+        <ul key={event.id}> 
+          <Link to={"events/" + event.id }>
+            <h4> Start Date: {event.start_date} </h4> 
+            <h4> Start Date: {event.title} </h4> 
+
+          </Link> 
+          <Link to="events/new" className="btn btn-warning">
         Create Event
         </Link> 
-        </div>
-        Event Home Page
-        
-           </div>
-        </div>
-      );
-    }
+        </ul> 
+      )
+    });
+  }
   render() {
     return(
         <div className="container">
         <div className="link">
         <div>
-        <Link to="events/new" className="btn btn-warning">
-        Create Event
-        </Link> 
+      
         </div>
         Event Home Page
         <ul className="list-group">
@@ -119,6 +119,7 @@ class Calendar extends Component {
           >
             <span className="number">{formattedDate}</span>
             <span className="bg">{formattedDate}
+
             </span>
             
             
@@ -137,10 +138,14 @@ class Calendar extends Component {
   }
 
   onDateClick = day => {
+    
     this.setState({
       selectedDate: day
     });
+
+    console.log(day);
   };
+  
 
   nextMonth = () => {
     this.setState({
@@ -174,5 +179,6 @@ class Calendar extends Component {
 function mapStateToProps(state){
   return {events: state.events.all } 
 }
+
 
 export default connect(mapStateToProps, {getEvents: getEvents})(Calendar); 

@@ -22,6 +22,8 @@ class SingleEventShow extends Component{
     return(
       <div className="container">
        <h3>Title: {this.props.event.title} </h3>
+       <h3>Start Date: {this.props.event.start_date} </h3>
+
        <button className="btn btn-warning" onClick={this.deleteButtonClick.bind(this)}>
          Delete Event
        </button> 
