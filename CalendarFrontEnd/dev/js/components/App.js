@@ -5,7 +5,7 @@ import "../../scss/style.scss";
 import {connect} from 'react-redux';
 import {getEvents} from '../actions/index'; 
 import {Link} from 'react-router'; 
-
+import Box from '../components/box.js'
 
 class App extends Component{
   render() {
