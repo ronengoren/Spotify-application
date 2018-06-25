@@ -1,7 +1,7 @@
 import {GET_EVENTS, GET_EVENT, CREATE_EVENT, DELETE_EVENT} from './types'; 
 import  axios from 'axios';
 
-const API_URL = "http://localhost:5000/api/v1" ; 
+const API_URL = "https://calendar-spotify-api.herokuapp.com/" ; 
 
 export function getEvents(){
     const request = axios.get(`${API_URL}/events`);
