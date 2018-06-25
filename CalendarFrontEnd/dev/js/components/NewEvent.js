@@ -70,5 +70,5 @@ class NewEvent extends Component{
 
 export default reduxForm({
   form: 'NewEventForm',
-  fields: ['title'] 
+  fields: ['title','start_date'],
 }, null, {createEvent})(NewEvent); 
