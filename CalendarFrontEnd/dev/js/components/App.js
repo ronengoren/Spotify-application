@@ -7,18 +7,16 @@ import {getEvents} from '../actions/index';
 import {Link} from 'react-router'; 
 
 
-
 class App extends Component{
   render() {
       return (
         <div className="App">
           <header>
             <div id="logo">
-              <span className="icon">date_range</span>
-              <span>
+              <span className="icon">
+            
               <b> PLAY</b>Dates
               {this.props.children}
-
               </span>
             </div>
           </header>
