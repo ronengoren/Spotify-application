@@ -10,6 +10,7 @@ import createLogger from 'redux-logger';
 import allReducers from './reducers';
 import App from './components/App';
 import Calendar from './components/Calendar';
+import Boxcon from './container/box-container.js'
 
 import routes from './routes'; 
 
