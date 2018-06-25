@@ -8994,3 +8994,11 @@ Processing by Api::V1::EventsController#index as HTML
 Completed 200 OK in 71ms (Views: 47.8ms | ActiveRecord: 11.8ms)
 
 
+Started GET "/api/v1/events" for ::1 at 2018-06-24 23:35:51 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (11.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.63ms)
+Completed 200 OK in 46ms (Views: 27.4ms | ActiveRecord: 11.5ms)
+
+
