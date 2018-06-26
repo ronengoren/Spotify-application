@@ -2,6 +2,11 @@ import React, {Component, PropTypes} from 'react';
 import {reduxForm} from 'redux-form'; 
 import {createEvent} from '../actions/index'; 
 
+
+
+
+
+
 class NewEvent extends Component{
   static contextTypes = {
     router: PropTypes.object

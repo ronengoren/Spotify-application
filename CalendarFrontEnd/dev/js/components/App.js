@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import Calendar from "./Calendar";
+import axios from 'axios'
+// import List from './List'
+// import SearchBar from './SearchBar'
+// import spinner from './spinner.gif'
 
 import "../../scss/style.scss";
 import {connect} from 'react-redux';
 import {getEvents} from '../actions/index'; 
 import {Link} from 'react-router'; 
-import Box from '../components/box.js'
 
 class App extends Component{
   render() {
@@ -19,6 +22,7 @@ class App extends Component{
               {this.props.children}
               </span>
             </div>
+            
           </header>
         
         </div>

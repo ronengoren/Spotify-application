@@ -6,9 +6,11 @@ import {getEvents} from '../actions/index';
 import {getEvent} from '../actions/index'; 
 import {Link} from 'react-router'; 
 import ReactDOM from 'react-dom';
-
+import Musix from './Musix'
 
 import "../../scss/style.scss";
+
+
 
 var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var MonthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -218,6 +220,10 @@ var Calendar = React.createClass({
 		
 	},
 	render: function(){
+	
+		<main>
+        {this.props.children}
+      </main>
 		var calendar = [];
 		for(var property in this.state.dates.calendar){
 			calendar.push(this.state.dates.calendar[property])
@@ -324,6 +330,10 @@ var Calendar = React.createClass({
 					<div id="entries">
 						<div className="contain_entries">
 							<div id="entries-header">
+							<div className="musix">
+									<h1></h1>
+									<Musix></Musix>
+									</div>
 								<p className="entryDay">{this.state.currDay} {this.state.currMonth}</p>
 								{this.state.present.getDate() === this.state.currDay && this.state.present.getMonth() === this.state.currMonthN && this.state.present.getFullYear() === this.state.currYear ? <p className="currday">TODAY</p> : null}
 							</div>
@@ -482,189 +492,6 @@ ReactDOM.render(<Calendar />, document.getElementById("app"));
   })
   .on("select selectstart", function(evt) { event.preventDefault(); return false; });
 }(jQuery))
-// class Calendar extends Component {
-//   componentWillMount(){
-//     this.props.getEvents();  
-//   } 
-//   renderEvents(){
-//     return this.props.events.map((event) => {
-//       return (
-//         <ul key={event.start_date}> 
-//           <Link to={"events/" + event.id }>
-//             <h4> Start Date: {event.start_date} </h4> 
-//             <h4> Start Date: {event.title} </h4> 
-
-//           </Link> 
-//           <Link to="events/new" className="btn btn-warning">
-//         Create Event
-//         </Link> 
-//         </ul> 
-//       )
-//     });
-//   }
-//   render() {
-//     return(
-//         <div className="container">
-//         <div className="link">
-//         <div>
-      
-//         </div>
-//         Event Home Page
-//         <ul className="list-group">
-//            {this.renderEvents()}
-//            </ul>
-//            </div>
-//         </div>
-//       );
-//     }
- 
-    
-
-    
-//   state = {
-//     selectedDay: function(day){
-//       this.state.warning = "";
-//       var selectedDate   = new Date();
-//       selectedDate.setDate(day);
-//       this.state.currDay = "";
-//       var currentMonth   = this.state.dates.nameofmonth;
-//       var currentMonthN  = this.state.dates.numberofmonth;
-//       var currentYear    = this.state.dates.date.getFullYear();
-//       return this.setState({today:selectedDate, currDay:day, currMonth:currentMonth, currYear:currentYear, currMonthN:currentMonthN});
-//     },
-//     currentMonth: new Date(),
-//     selectedDate: new Date()
-//   };
-
-
-
-
-  
-
-//   renderHeader() {
-//     const dateFormat = "MMMM YYYY";
-
-//     return (
-//       <div className="header row flex-middle">
-//         <div className="col col-start">
-//           <div className="icon" onClick={this.prevMonth}>
-//             chevron_left
-//           </div>
-//         </div>
-//         <div className="col col-center">
-//           <span>{dateFns.format(this.state.currentMonth, dateFormat)}</span>
-//         </div>
-//         <div className="col col-end" onClick={this.nextMonth}>
-//           <div className="icon">chevron_right</div>
-//         </div>
-//       </div>
-//     );
-//   }
-
-//   renderDays() {
-//     const dateFormat = "dddd";
-//     const days = [];
-
-//     let startDate = dateFns.startOfWeek(this.state.currentMonth);
-
-//     for (let i = 0; i < 7; i++) {
-//       days.push(
-//         <div className="col col-center" key={i}>
-//           {dateFns.format(dateFns.addDays(startDate, i), dateFormat)}
-//         </div>
-//       );
-//     }
-
-//     return <div className="days row">{days}</div>;
-//   }
-
-//   renderCells() {
-//     const { currentMonth, selectedDate } = this.state;
-//     const monthStart = dateFns.startOfMonth(currentMonth);
-//     const monthEnd = dateFns.endOfMonth(monthStart);
-//     const startDate = dateFns.startOfWeek(monthStart);
-//     const endDate = dateFns.endOfWeek(monthEnd);
-//     const dateFormat = "D";
-//     const rows = [];
-
-//     let days = [];
-//     let day = startDate;
-//     let formattedDate = "";
-//     while (day <= endDate) {
-//       for (let i = 0; i < 7; i++) {
-//         formattedDate = dateFns.format(day, dateFormat);
-//         const cloneDay = day;
-//         days.push(
-//           <div
-//             className={`col cell ${
-              
-//               !dateFns.isSameMonth(day, monthStart)
-//                 ? "disabled"
-//                 : dateFns.isSameDay(day, selectedDate) ? "selected" : ""
-//             }`}
-//             key={day}
-//             onClick={() => this.onDateClick(alert(day))}
-//           >        
-      
-
-//             <span className="number">{formattedDate}</span>
-//             <span className="bg">{formattedDate}
-            
-
-//             </span>
-            
-      
-//           </div>
-          
-//         );
-//         day = dateFns.addDays(day, 1);
-//       }
-//       rows.push(
-//         <div className="row" key={day}>
-//           {days}
-          
-//         </div>
-//       );
-//       days = [];
-//     }
-//     return <div className="body">{rows}</div>;
-//   }
-
-//   onDateClick = day => {
-//     this.setState({
-//       selectedDate: day
-//     });
-//   };
-  
-  
-
-//   nextMonth = () => {
-//     this.setState({
-//       currentMonth: dateFns.addMonths(this.state.currentMonth, 1)
-//     });
-//   };
-
-//   prevMonth = () => {
-//     this.setState({
-//       currentMonth: dateFns.subMonths(this.state.currentMonth, 1)
-//     });
-//   };
-
-//   render() {
-//     return (
-//       <div className="calendar">
-//         {this.renderHeader()}
-//         {this.renderDays()}
-//         {this.renderCells()}
-//             <div>
-//         {this.renderEvents()}
-//           </div>
-//           <br></br>
-//       </div>
-//     );
-//   }
-  
-// }
 
 
 
@@ -674,4 +501,4 @@ function mapStateToProps(state){
 }
 
 
-export default connect(mapStateToProps, {getEvents: getEvents})(Calendar); 
+export default Calendar; connect(mapStateToProps, {getEvents: getEvents})(Calendar); 
