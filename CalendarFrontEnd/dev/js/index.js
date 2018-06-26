@@ -1,6 +1,6 @@
 import 'babel-polyfill';
 import React from 'react';
-import ReactDOM from "react-dom";
+import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import {Router, browserHistory} from 'react-router'; 
@@ -9,7 +9,11 @@ import promise from 'redux-promise';
 import createLogger from 'redux-logger';
 import allReducers from './reducers';
 import App from './components/App';
+import Calendar from './components/Calendar';
+import Boxcon from './container/box-container.js'
+
 import routes from './routes'; 
+
 
 const logger = createLogger();
 const store = createStore(
@@ -19,7 +23,7 @@ const store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router history={browserHistory} routes={routes} />
-    </Provider>,
-    document.getElementById('root')
+    <Router history = {browserHistory}routes = {routes}/>
+     </Provider>,
+    document.getElementById('app')
 );
