@@ -1,15 +1,19 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
+import ReactDOM from 'react-dom';
+
 import dateFns from "date-fns";
+import {reduxForm} from 'redux-form'; 
 // import Moment from '/moment';
 import {connect} from 'react-redux';
 import {getEvents} from '../actions/index'; 
 import {getEvent} from '../actions/index'; 
+import {createEvent} from '../actions/index'; 
+import {NewEventForm} from 'react-redux'; 
+
 import {Link} from 'react-router'; 
-import ReactDOM from 'react-dom';
 
 
 import "../../scss/style.scss";
-
 var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var MonthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -37,12 +41,12 @@ function generateCalendar(numberofdays, year, month, day, dates){
 	day++;
 	return day > numberofdays ? dates : generateCalendar(numberofdays, year, month, day, dates);
 }
-
+// to add a zero to the time when this is less than 10
 function addZero(i) {
-  if (i < 10) {
-      i = "0" + i;
-  }
-  return i;
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
 }
 
 function resetColors(){
@@ -78,8 +82,8 @@ var Calendar = React.createClass({
 		var file 		 = {};
 		month = new Month(today.getFullYear(), today.getMonth() + 1, month);
 		return {dates:month, today:today, entry:'+', present:present, entries:entries, dColor:defaultColor, color1:color1, color2:color2, color3:color3, color4:color4, color5:color5, file:file};
-  },
-  update: function(direction){
+	},
+	update: function(direction){
 		var month = {};
 		if(direction == "left"){
 			month = new Month(this.state.dates.date.getFullYear(), this.state.dates.date.getMonth(), month);
@@ -91,8 +95,8 @@ var Calendar = React.createClass({
 		this.state.currYear = "";
 		$(".float").removeClass('rotate');
 		return this.setState({dates:month});
-  },
-  selectedDay: function(day){
+	},
+	selectedDay: function(day){
 		this.state.warning = "";
 		var selected_day   = new Date();
 		selected_day.setDate(day);
@@ -100,8 +104,8 @@ var Calendar = React.createClass({
 		var currentMonthN  = this.state.dates.numberofmonth;
 		var currentYear    = this.state.dates.date.getFullYear();
 		return this.setState({today:selected_day, currDay:day, currMonth:currentMonth, currYear:currentYear, currMonthN:currentMonthN});
-  },
-  returnPresent: function(){
+	},
+	returnPresent: function(){
 		if($(".float").hasClass('rotate')){
 			$(".float").removeClass('rotate');
 			$("#add_entry").addClass('animated slideOutDown');
@@ -131,6 +135,10 @@ var Calendar = React.createClass({
 	                $("#open_entry").css('display','none');
 	            }, 400);
 				$("#entry_name").val("");
+				$("#all-day").prop('checked', false); // unchecks checkbox
+				$("#not-all-day").css('display', 'block');
+				$("#enter_hour").val("");
+				$("#entry_location").val("");
 				$("#entry_note").val("");
 				// reset entry colors
 				var resColor = new resetColors();
@@ -154,7 +162,18 @@ var Calendar = React.createClass({
 		if($.trim(entryName).length > 0){
 			var entryTime = new Date();
 			var entryDate = {year,month,day};
-		
+			$(".duration").css('background', 'none');
+			if($("#all-day").is(':checked')){
+				var entryDuration = "All day";
+			}else if($("#enter_hour").val() && $("#enter_hour").val() >= 0 && $("#enter_hour").val() <= 24){
+				var entryDuration = addZero($("#enter_hour").val());
+			}else{
+				$(".duration").css('background', '#F7E8E8');
+				return 0;
+			}
+			if($("#entry_location").val()){
+				var entryLocation = $("#entry_location").val();
+			}else{var entryLocation = ""}
 			if($("#entry_note").val()){
 				var entryNote = $("#entry_note").val();
 			}else{var entryNote = ""}
@@ -171,8 +190,13 @@ var Calendar = React.createClass({
 	            $("#add_entry").css('display','none');
 	        }, 400);
 			$("#entry_name").val("");
+			$("#all-day").prop('checked', false); // unchecks checkbox
+			$("#not-all-day").css('display', 'block');
+			$("#enter_hour").val("");
+			$("#entry_location").val("");
 			$("#entry_note").val("");
 			// reset entry colors
+			var resColor = new resetColors();
 
 			return (this.setState({entries: this.state.entries}), this.setState(resColor));
 		}
@@ -188,7 +212,12 @@ var Calendar = React.createClass({
         }, 400);
         $(".entry").css('background', 'none');
 		$("#entry_name").val("");
+		$("#all-day").prop('checked', false); // unchecks checkbox
+		$("#not-all-day").css('display', 'block');
+		$("#enter_hour").val("");
+		$("#entry_location").val("");
 		$("#entry_note").val("");
+		var resColor = new resetColors();
 		return (this.setState({entries: this.state.entries}), this.setState(resColor));
 	},
 	openEntry: function(entry, e){
@@ -209,6 +238,51 @@ var Calendar = React.createClass({
 			$(".float").addClass('rotate');
 			$("#"+e).css('background', '#F1F1F1');
 			return this.setState({openEntry: entry});
+		}
+	},
+	setColor: function(color, state){
+		switch(state){
+			case 'color1':
+				var changeColor = {color:this.state.dColor.color};
+				var defColor = {color:color.color};
+				return this.setState({dColor:defColor, color1:changeColor});
+			break;
+			case 'color2':
+				var changeColor = {color:this.state.dColor.color};
+				var defColor = {color:color.color};
+				return this.setState({dColor:defColor, color2:changeColor});
+			break;
+			case 'color3':
+				var changeColor = {color:this.state.dColor.color};
+				var defColor = {color:color.color};
+				return this.setState({dColor:defColor, color3:changeColor});
+			break;
+			case 'color4':
+				var changeColor = {color:this.state.dColor.color};
+				var defColor = {color:color.color};
+				return this.setState({dColor:defColor, color4:changeColor});
+			break;
+			case 'color5':
+				var changeColor = {color:this.state.dColor.color};
+				var defColor = {color:color.color};
+				return this.setState({dColor:defColor, color5:changeColor});
+			break;
+		}
+	},
+	handleImage: function(e){
+		e.preventDefault();
+	    let reader = new FileReader();
+	    let file = e.target.files[0];
+		if(file){
+		    reader.onloadend = () => {
+		    	var readerResult = reader.result;
+		    	var img = {file,readerResult};
+		      this.setState({file:img});
+		  	}
+		  	reader.readAsDataURL(file);
+		}else{
+			var img = {};
+			this.setState({file:img});
 		}
 	},
 	openMenu: function(){
@@ -246,8 +320,12 @@ var Calendar = React.createClass({
 						<div id="menu-content">
 							<div className="madeBy">
 								<div className="madeOverlay">
-								
+									<span id="madeName">Ricardo Barbosa</span>
+									<span id="madeInfo">WebDeveloper - Portugal</span>
+									<span id="madeWeb"><a target="_blank" href="https://github.com/RicardoPBarbosa"><i className="fa fa-github" aria-hidden="true"></i> GitHub</a></span>
+									<span id="madeWeb"><a target="_blank" href="http://codepen.io/RicardoBarbosa/"><i className="fa fa-codepen" aria-hidden="true"></i> CodePen</a></span>
 								</div>
+								<img src="http://imgur.com/LOaisfQ.jpg" width="260" height="200" />
 							</div>
 						</div>
 						<div id="click-close"></div>
@@ -260,11 +338,45 @@ var Calendar = React.createClass({
 					</div>
 					<div id="add_entry">
 						<div className="enter_entry">
-							<input type="text" placeholder="Create Event" id="entry_name" />
+							<input type="text" placeholder="Enter title" id="entry_name" />
 							<span id="save_entry" onClick={this.saveEntry.bind(null, this.state.currYear, this.state.currMonthN, this.state.currDay)}>SAVE</span>
 						</div>
 						<div className="entry_details">
 							<div>
+								<div className="entry_info first">
+									<i className="fa fa-image" aria-hidden="true"></i>
+									<input type="file" name='entry-img' id="entry-img" onChange={(e)=>this.handleImage(e)} />
+									<label htmlFor="entry-img" id="for_img"><span id="file_name">Choose an image</span></label>
+									<span id="remove_img">Remove</span>
+								</div>
+								<div className="entry_info2 first second duration">
+									<i className="fa fa-clock-o" aria-hidden="true"></i>
+									<input className='toggle' type="checkbox" name='all-day' id="all-day" />
+									<p>All-day</p>
+									<div id="not-all-day">
+										<p id="select_hour">Select hour</p>
+										<p id="hour"><input type="number" id="enter_hour" min="0" max="24" /> h</p>
+									</div>
+								</div>
+								<div className="entry_info2">
+									<i className="fa fa-map-marker" aria-hidden="true"></i>
+									<input type="text" placeholder="Add location" id="entry_location" />
+								</div>
+								<div className="entry_info2">
+									<i className="fa fa-pencil" aria-hidden="true"></i>
+									<textarea id="entry_note" cols="35" rows="2" placeholder="Add note"></textarea>
+								</div>
+								<div className="entry_info colors">
+									<i className="fa fa-circle" aria-hidden="true" id="blue" style={this.state.dColor} ></i>
+									<p id="defColor">Default color</p>
+									<div>
+										<span><i onClick={this.setColor.bind(null, this.state.color1, "color1")} className="fa fa-circle" aria-hidden="true" style={this.state.color1}></i></span>
+										<span><i onClick={this.setColor.bind(null, this.state.color2, "color2")} className="fa fa-circle" aria-hidden="true" style={this.state.color2}></i></span>
+										<span><i onClick={this.setColor.bind(null, this.state.color3, "color3")} className="fa fa-circle" aria-hidden="true" style={this.state.color3}></i></span>
+										<span><i onClick={this.setColor.bind(null, this.state.color4, "color4")} className="fa fa-circle" aria-hidden="true" style={this.state.color4}></i></span>
+										<span><i onClick={this.setColor.bind(null, this.state.color5, "color5")} className="fa fa-circle" aria-hidden="true" style={this.state.color5}></i></span>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -375,7 +487,7 @@ var Calendar = React.createClass({
 		)
 	}
 })
-ReactDOM.render(<Calendar />, document.getElementById("app"));
+ReactDOM.render(<Calendar />, document.getElementById("root"));
 
 (function($, undefined) {
 	$("#all-day").click(function(){
@@ -482,190 +594,6 @@ ReactDOM.render(<Calendar />, document.getElementById("app"));
   })
   .on("select selectstart", function(evt) { event.preventDefault(); return false; });
 }(jQuery))
-// class Calendar extends Component {
-//   componentWillMount(){
-//     this.props.getEvents();  
-//   } 
-//   renderEvents(){
-//     return this.props.events.map((event) => {
-//       return (
-//         <ul key={event.start_date}> 
-//           <Link to={"events/" + event.id }>
-//             <h4> Start Date: {event.start_date} </h4> 
-//             <h4> Start Date: {event.title} </h4> 
-
-//           </Link> 
-//           <Link to="events/new" className="btn btn-warning">
-//         Create Event
-//         </Link> 
-//         </ul> 
-//       )
-//     });
-//   }
-//   render() {
-//     return(
-//         <div className="container">
-//         <div className="link">
-//         <div>
-      
-//         </div>
-//         Event Home Page
-//         <ul className="list-group">
-//            {this.renderEvents()}
-//            </ul>
-//            </div>
-//         </div>
-//       );
-//     }
- 
-    
-
-    
-//   state = {
-//     selectedDay: function(day){
-//       this.state.warning = "";
-//       var selectedDate   = new Date();
-//       selectedDate.setDate(day);
-//       this.state.currDay = "";
-//       var currentMonth   = this.state.dates.nameofmonth;
-//       var currentMonthN  = this.state.dates.numberofmonth;
-//       var currentYear    = this.state.dates.date.getFullYear();
-//       return this.setState({today:selectedDate, currDay:day, currMonth:currentMonth, currYear:currentYear, currMonthN:currentMonthN});
-//     },
-//     currentMonth: new Date(),
-//     selectedDate: new Date()
-//   };
-
-
-
-
-  
-
-//   renderHeader() {
-//     const dateFormat = "MMMM YYYY";
-
-//     return (
-//       <div className="header row flex-middle">
-//         <div className="col col-start">
-//           <div className="icon" onClick={this.prevMonth}>
-//             chevron_left
-//           </div>
-//         </div>
-//         <div className="col col-center">
-//           <span>{dateFns.format(this.state.currentMonth, dateFormat)}</span>
-//         </div>
-//         <div className="col col-end" onClick={this.nextMonth}>
-//           <div className="icon">chevron_right</div>
-//         </div>
-//       </div>
-//     );
-//   }
-
-//   renderDays() {
-//     const dateFormat = "dddd";
-//     const days = [];
-
-//     let startDate = dateFns.startOfWeek(this.state.currentMonth);
-
-//     for (let i = 0; i < 7; i++) {
-//       days.push(
-//         <div className="col col-center" key={i}>
-//           {dateFns.format(dateFns.addDays(startDate, i), dateFormat)}
-//         </div>
-//       );
-//     }
-
-//     return <div className="days row">{days}</div>;
-//   }
-
-//   renderCells() {
-//     const { currentMonth, selectedDate } = this.state;
-//     const monthStart = dateFns.startOfMonth(currentMonth);
-//     const monthEnd = dateFns.endOfMonth(monthStart);
-//     const startDate = dateFns.startOfWeek(monthStart);
-//     const endDate = dateFns.endOfWeek(monthEnd);
-//     const dateFormat = "D";
-//     const rows = [];
-
-//     let days = [];
-//     let day = startDate;
-//     let formattedDate = "";
-//     while (day <= endDate) {
-//       for (let i = 0; i < 7; i++) {
-//         formattedDate = dateFns.format(day, dateFormat);
-//         const cloneDay = day;
-//         days.push(
-//           <div
-//             className={`col cell ${
-              
-//               !dateFns.isSameMonth(day, monthStart)
-//                 ? "disabled"
-//                 : dateFns.isSameDay(day, selectedDate) ? "selected" : ""
-//             }`}
-//             key={day}
-//             onClick={() => this.onDateClick(alert(day))}
-//           >        
-      
-
-//             <span className="number">{formattedDate}</span>
-//             <span className="bg">{formattedDate}
-            
-
-//             </span>
-            
-      
-//           </div>
-          
-//         );
-//         day = dateFns.addDays(day, 1);
-//       }
-//       rows.push(
-//         <div className="row" key={day}>
-//           {days}
-          
-//         </div>
-//       );
-//       days = [];
-//     }
-//     return <div className="body">{rows}</div>;
-//   }
-
-//   onDateClick = day => {
-//     this.setState({
-//       selectedDate: day
-//     });
-//   };
-  
-  
-
-//   nextMonth = () => {
-//     this.setState({
-//       currentMonth: dateFns.addMonths(this.state.currentMonth, 1)
-//     });
-//   };
-
-//   prevMonth = () => {
-//     this.setState({
-//       currentMonth: dateFns.subMonths(this.state.currentMonth, 1)
-//     });
-//   };
-
-//   render() {
-//     return (
-//       <div className="calendar">
-//         {this.renderHeader()}
-//         {this.renderDays()}
-//         {this.renderCells()}
-//             <div>
-//         {this.renderEvents()}
-//           </div>
-//           <br></br>
-//       </div>
-//     );
-//   }
-  
-// }
-
 
 
 
@@ -674,4 +602,5 @@ function mapStateToProps(state){
 }
 
 
-export default connect(mapStateToProps, {getEvents: getEvents})(Calendar); 
+export default connect(mapStateToProps, {createEvent,getEvent, getEvents})(reduxForm(Calendar));
+// const form = reduxForm({ form: 'NewEventForm', fields: ['title','start_date'], }, null, {createEvent})();
