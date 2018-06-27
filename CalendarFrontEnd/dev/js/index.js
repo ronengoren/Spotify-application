@@ -16,6 +16,7 @@ import rootReducer from './reducers';
 
 import routes from './routes'; 
 
+const storemusix = createStore(rootReducer);
 
 const logger = createLogger();
 const store = createStore(

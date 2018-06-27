@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { nextLyric, restartSong } from './../actions';
+import { nextLyric, restartSong } from '../actions';
+import ReactDOM from 'react-dom';
 
 const SongDisplay = ({ dispatch, song }) => {
   const { title, artist, songArray, arrayPosition, id } = song;
   const currentLine = songArray[arrayPosition];
+  // console.log(song)
   return (
     <div>
       <h1>{title}</h1>
@@ -52,3 +54,4 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(SongDisplay);
+

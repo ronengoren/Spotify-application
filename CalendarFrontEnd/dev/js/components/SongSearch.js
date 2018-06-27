@@ -1,5 +1,5 @@
-import React from 'react';
-import { fetchSongId } from '../actions/index.js';
+import React, {Component} from 'react';
+import { fetchSongId } from '../actions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 

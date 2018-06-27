@@ -20,13 +20,13 @@ class App extends Component{
           <header>
             <div id="logo">
               <span className="icon">
-              <div>
+              {/* <div>
       <Header />
       <br/>
       <SongList />
       <hr/>
       <SongDisplay />
-    </div>
+    </div> */}
               <b> PLAY</b>Dates
               {this.props.children}
               </span>

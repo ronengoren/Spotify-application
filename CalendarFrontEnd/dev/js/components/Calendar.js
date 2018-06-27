@@ -330,8 +330,7 @@ var Calendar = React.createClass({
 					<div id="entries">
 						<div className="contain_entries">
 							<div id="entries-header">
-							<div className="musix">
-									<h1></h1>
+							<div id="musix">
 									<Musix></Musix>
 									</div>
 								<p className="entryDay">{this.state.currDay} {this.state.currMonth}</p>
