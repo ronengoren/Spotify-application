@@ -10,9 +10,9 @@ const SongDisplay = ({ dispatch, song }) => {
   // console.log(song)
   return (
     <div>
-      <h1>{title}</h1>
+      {/* <h1>{title}</h1>
       <h4>{artist}</h4>
-      <hr/>
+      <hr/> */}
       {/* <div onClick={e => {
         e.preventDefault();
         if(!(arrayPosition === songArray.length - 1)) {

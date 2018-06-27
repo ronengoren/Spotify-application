@@ -4,7 +4,7 @@ import App from './components/App';
 import Calendar from './components/Calendar';
 import NewEvent from './components/NewEvent';
 import SingleEventShow from './components/SingleEventShow';
-import Musix from './components/Musix';
+import Musix from './components/Calendar';
 import rootReducer from './reducers';
 import { Provider } from 'react-redux';
 

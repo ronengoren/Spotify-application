@@ -6,7 +6,8 @@ import {getEvents} from '../actions/index';
 import {getEvent} from '../actions/index'; 
 import {Link} from 'react-router'; 
 import ReactDOM from 'react-dom';
-import Musix from './Musix'
+// import Musix from './Musix'
+import axios from 'axios';
 
 import "../../scss/style.scss";
 
@@ -78,9 +79,12 @@ var Calendar = React.createClass({
 		var color4       = {color:"#8129B9"};
 		var color5       = {color:"#666666"};
 		var file 		 = {};
+
 		month = new Month(today.getFullYear(), today.getMonth() + 1, month);
 		return {dates:month, today:today, entry:'+', present:present, entries:entries, dColor:defaultColor, color1:color1, color2:color2, color3:color3, color4:color4, color5:color5, file:file};
-  },
+
+	},
+  
   update: function(direction){
 		var month = {};
 		if(direction == "left"){
@@ -98,11 +102,15 @@ var Calendar = React.createClass({
 		this.state.warning = "";
 		var selected_day   = new Date();
 		selected_day.setDate(day);
+
 		var currentMonth   = this.state.dates.nameofmonth;
 		var currentMonthN  = this.state.dates.numberofmonth;
 		var currentYear    = this.state.dates.date.getFullYear();
+		
+		console.log("currDay " + selected_day)
+		
 		return this.setState({today:selected_day, currDay:day, currMonth:currentMonth, currYear:currentYear, currMonthN:currentMonthN});
-  },
+	},
   returnPresent: function(){
 		if($(".float").hasClass('rotate')){
 			$(".float").removeClass('rotate');
@@ -232,6 +240,8 @@ var Calendar = React.createClass({
 		var done = false;
 		var count = 0;
 		var daysBetween = '';
+		
+
 		if(this.state.openEntry){
 			var selectdDate = new Date(this.state.openEntry.entryDate.year, this.state.openEntry.entryDate.month, this.state.openEntry.entryDate.day);
 			if(selectdDate > this.state.present){
@@ -243,6 +253,7 @@ var Calendar = React.createClass({
 			}
 			if(this.state.present.getDate() === this.state.openEntry.entryDate.day && this.state.present.getMonth() === this.state.openEntry.entryDate.month && this.state.present.getFullYear() === this.state.openEntry.entryDate.year){
 				daysBetween = "Today";
+				
 			}
 		}
 		return(
@@ -271,6 +282,7 @@ var Calendar = React.createClass({
 						</div>
 						<div className="entry_details">
 							<div>
+
 							</div>
 						</div>
 					</div>
@@ -331,7 +343,7 @@ var Calendar = React.createClass({
 						<div className="contain_entries">
 							<div id="entries-header">
 							<div id="musix">
-									<Musix></Musix>
+									<Musix release_date_min={this.props.currDay} />
 									</div>
 								<p className="entryDay">{this.state.currDay} {this.state.currMonth}</p>
 								{this.state.present.getDate() === this.state.currDay && this.state.present.getMonth() === this.state.currMonthN && this.state.present.getFullYear() === this.state.currYear ? <p className="currday">TODAY</p> : null}
@@ -384,6 +396,7 @@ var Calendar = React.createClass({
 		)
 	}
 })
+
 ReactDOM.render(<Calendar />, document.getElementById("app"));
 
 (function($, undefined) {
@@ -498,6 +511,62 @@ ReactDOM.render(<Calendar />, document.getElementById("app"));
 function mapStateToProps(state){
   return {events: state.events.all } 
 }
+
+var release_date_min = "";
+console.log("hello" + release_date_min)
+var release_date_max = "";
+
+class Musix extends React.Component {
+	constructor() {  
+        super();
+        this.state = {
+            songs: []
+        }
+
+    }
+	componentDidMount()  {
+	  // var min = year - 90
+	  // var randomYear = Math.floor(Math.random() * (year - min + 1)) + min;
+
+	  axios.get('http://api.musixmatch.com/ws/1.1/track.search', {
+		  params: {
+			apikey: "d2534efb46fbe28c49449d58f2018e9d",
+			f_track_release_group_first_release_date_min: release_date_min,
+			f_track_release_group_first_release_date_max: release_date_max,
+			format: "JSON"
+  
+		  }
+		})
+	
+		.then((res) => {
+			this.setState(()=>{  
+				return {
+					todos: res.data
+				}
+			})
+		  const albums = "Album Title: " + res.data.message.body.track_list[5].track.album_name + " Artist: " + res.data.message.body.track_list[5].track.artist_name + " Track Name: " + res.data.message.body.track_list[5].track.track_name + " First release date: " + res.data.message.body.track_list[5].track.first_release_date;
+		  this.setState({albums});
+		//   console.log(res.data.message.body.track_list)
+		  console.log(albums)
+		})
+		.catch((error) => {
+		  // console.log(error);
+	  });
+  
+	}
+
+	render() {
+	  return (
+		<div>
+		 {/* <div className="header">This Song was realeased today 90 years ago:</div> */}
+		<p>{this.state.albums}</p> 
+  
+		{/* <div className="spotifyLink">Listen to this song on Spotify!</div> */}
+  
+	  </div>
+	  );
+	}
+  }
 
 
 export default Calendar; connect(mapStateToProps, {getEvents: getEvents})(Calendar); 
