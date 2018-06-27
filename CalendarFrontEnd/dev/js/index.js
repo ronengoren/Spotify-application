@@ -12,10 +12,9 @@ import createLogger from 'redux-logger';
 import allReducers from './reducers';
 import App from './components/App';
 import Calendar from './components/Calendar';
-import Boxcon from './container/box-container.js'
+import rootReducer from './reducers';
 
 import routes from './routes'; 
-
 
 
 const logger = createLogger();
@@ -30,3 +29,12 @@ ReactDOM.render(
      </Provider>,
     document.getElementById('app')
 );
+
+// ReactDOM.render(
+//     <Provider store={store}>
+//     <Router history = {browserHistory}routes = {routes}/>
+
+     
+//     </Provider>,
+//     document.getElementById('app')
+//   );

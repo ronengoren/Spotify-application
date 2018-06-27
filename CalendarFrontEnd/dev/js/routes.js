@@ -5,8 +5,10 @@ import Calendar from './components/Calendar';
 import NewEvent from './components/NewEvent';
 import SingleEventShow from './components/SingleEventShow';
 import Musix from './components/Musix';
+import rootReducer from './reducers';
+import { Provider } from 'react-redux';
 
-'use strict';
+
 
 
 export default(

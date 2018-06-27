@@ -1,10 +1,23 @@
 import { combineReducers } from 'redux';
 import EventsReducer from './events_reducer'; 
 import {reducer as formReducer} from 'redux-form';
+import songChangeReducer from './songChangeReducer';
+import lyricChangeReducer from './lyricChangeReducer';
 
-const allReducers = combineReducers({
-    events: EventsReducer, 
-    form: formReducer
-  });
+
+const rootReducer = combineReducers({
+  currentSongId: songChangeReducer,
+  songsById: lyricChangeReducer
+});
+
+export default rootReducer;
+
   
-  export default allReducers
+  // export default allReducers
+
+  // const rootReducer = combineReducers({
+  //   currentSongId: songChangeReducer,
+  //   songsById: lyricChangeReducer
+  // });
+
+  // export default allReducers;

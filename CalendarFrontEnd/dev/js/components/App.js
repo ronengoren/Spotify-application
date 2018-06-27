@@ -4,6 +4,9 @@ import axios from 'axios'
 // import List from './List'
 // import SearchBar from './SearchBar'
 // import spinner from './spinner.gif'
+import SongDisplay from './SongDisplay';
+import SongList from './SongList';
+import Header from './Header';
 
 import "../../scss/style.scss";
 import {connect} from 'react-redux';
@@ -17,7 +20,13 @@ class App extends Component{
           <header>
             <div id="logo">
               <span className="icon">
-            
+              <div>
+      <Header />
+      <br/>
+      <SongList />
+      <hr/>
+      <SongDisplay />
+    </div>
               <b> PLAY</b>Dates
               {this.props.children}
               </span>
@@ -29,78 +38,5 @@ class App extends Component{
       );
     }
   
-  // render(){
-  //   return(
-  //     <div> 
-  //     Navbar
-  //     {this.props.children}
-  //     </div> 
-  //   )
-
-  // }
-}
-
-// import "App.css";
-
-// class EventsHome extends Component {
-//   componentWillMount(){
-//       this.props.getEvents();  
-//     } 
-//     renderEvents(){
-//       return this.props.events.map((event) => {
-//         return (
-//           <li key={event.id}> 
-//             <Link to={"events/" + event.id }>
-//               <h4> {event.title} </h4> 
-//             </Link> 
-//           </li> 
-//         )
-//       });
-//     }
-  // render() {
-  //     return(
-  //         <div className="container">
-    
-  //         <div>
-  //         <Link to="events/new" className="btn btn-warning">
-  //         Create Event
-  //         </Link> 
-  //         {this.props.children}
-
-  //         </div>
-    
-  //         Event Home Page
-  //         <ul className="list-group">
-  //         {this.renderEvents()}
-  //         </ul>
-  //         </div>
-  //       );
-  //     }
-  //   }
-
-    // function mapStateToProps(state){
-    //   return {events: state.events.all } 
-    // }
-
-// class App extends React.Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <header>
-//           <div id="logo">
-//             <span className="icon">date_range</span>
-//             <span>
-//             <b> PLAY</b>Dates
-//             </span>
-//           </div>
-//         </header>
-//         <main>
-//           <Calendar />
-//         </main>
-//       </div>
-//     );
-//   }
-// }
-
-// export default App; connect(mapStateToProps, {getEvents: getEvents})(App); 
+    }
 export default App
