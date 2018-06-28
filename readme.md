@@ -12,3 +12,6 @@ Beside fully working rails API that functionaly able to create and delete events
 I hope you enjoyed the app!
 
 Thanks!
+
+
+![screen shot 2018-06-28 at 8 54 58 am](https://user-images.githubusercontent.com/18123962/42035519-23640102-7ab1-11e8-8de7-a63e67fdf42b.png)
