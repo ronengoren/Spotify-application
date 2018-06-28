@@ -1,5 +1,5 @@
 
-#Hello Spotify 
+# Hello Spotify!
 
 A small brief about this project.
 
