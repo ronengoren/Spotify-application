@@ -10,11 +10,52 @@ import SongDisplay from '../components/SongDisplay';
 import SongList from '../components/SongList';
 import Header from '../components/Header';
 import SongSearch from '../components/SongSearch';
+import EventsHome from '../components/Calendar';
 
 
 
 const API_URL = "http://localhost:5000/api/v1" ; 
 
+export const requestSong = (title, localSongId) => ({
+  type: types.REQUEST_SONG,
+  title,
+  songId: localSongId
+});
+
+export function getEvents(){
+    const request = axios.get(`${API_URL}/events`);
+    return{
+      type: GET_EVENTS,
+      payload: request
+    };
+  }
+
+  export function createEvent(props){
+    const request = axios.post(`${API_URL}/events`, props);
+    return{
+      type: CREATE_EVENT,
+      payload: request
+    };
+  }
+
+  export function deleteEvent(id){
+    const request = axios.delete(`${API_URL}/events/${id}`);
+  
+    return{
+      type: DELETE_EVENT,
+      payload: request
+    }; 
+  }
+
+  export function getEvent(id){
+    const request = axios.get(`${API_URL}/events/${id}`);
+  
+    return{
+      type: GET_EVENT,
+      payload: request
+    }; 
+  }
+  
 
 export const nextLyric = (currentSongId) => ({
   type: types.NEXT_LYRIC,
@@ -57,44 +98,3 @@ export function fetchSongId(title) {
     });
   };
 }
-// http://api.musixmatch.com/ws/1.1/track.search?apikey=d2534efb46fbe28c49449d58f2018e9d&q_track=' + title + '&page_size=1&s_track_rating=desc
-export const requestSong = (title, localSongId) => ({
-  type: types.REQUEST_SONG,
-  title,
-  songId: localSongId
-});
-
-export function getEvents(){
-    const request = axios.get(`${API_URL}/events`);
-    return{
-      type: GET_EVENTS,
-      payload: request
-    };
-  }
-
-  export function createEvent(props){
-    const request = axios.post(`${API_URL}/events`, props);
-    return{
-      type: CREATE_EVENT,
-      payload: request
-    };
-  }
-
-  export function deleteEvent(id){
-    const request = axios.delete(`${API_URL}/events/${id}`);
-  
-    return{
-      type: DELETE_EVENT,
-      payload: request
-    }; 
-  }
-
-  export function getEvent(id){
-    const request = axios.get(`${API_URL}/events/${id}`);
-  
-    return{
-      type: GET_EVENT,
-      payload: request
-    }; 
-  }
-  

@@ -8,7 +8,7 @@ module Api
           end 
   
            def create
-              @event= Event.create(event_params)
+              @event = Event.create(event_params)
               if @event.save
                render json: @event, status: 201
                else
@@ -31,7 +31,7 @@ module Api
             end 
   
             def event_params
-              params.permit(:title, :start_date)
+              params.permit(:title, :start_date, :end_date)
             end 
         end 
     end 
