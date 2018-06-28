@@ -13,4 +13,5 @@ I hope you enjoyed the app!
 
 Thanks!
 
-![screen shot 2018-06-28 at 8 55 02 am](https://user-images.githubusercontent.com/18123962/42035713-9bca6eb0-7ab1-11e8-8c05-98f86c69d852.png)
+![screen shot 2018-06-28 at 9 05 04 am](https://user-images.githubusercontent.com/18123962/42036077-73b33528-7ab2-11e8-86e5-f98b8830d145.png)
+
