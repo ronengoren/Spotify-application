@@ -7,11 +7,14 @@ import axios from 'axios'
 import SongDisplay from './SongDisplay';
 import SongList from './SongList';
 import Header from './Header';
-
+import NewEvent from './NewEvent'
 import "../../scss/style.scss";
 import {connect} from 'react-redux';
 import {getEvents} from '../actions/index'; 
+import {createEvents} from '../actions/index'; 
+
 import {Link} from 'react-router'; 
+import SingleEventShow from './SingleEventShow';
 
 class App extends Component{
   render() {
@@ -20,13 +23,13 @@ class App extends Component{
           <header>
             <div id="logo">
               <span className="icon">
-              {/* <div>
-      <Header />
+              <div>
+      <NewEvent />
       <br/>
-      <SongList />
+      <SingleEventShow />
       <hr/>
-      <SongDisplay />
-    </div> */}
+      {/* <SongDisplay /> */}
+    </div>
               <b> PLAY</b>Dates
               {this.props.children}
               </span>

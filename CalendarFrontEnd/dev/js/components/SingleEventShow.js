@@ -7,7 +7,7 @@ class SingleEventShow extends Component{
     router: PropTypes.object
   }
   componentWillMount(){
-        this.props.getEvent(this.props.params.id); 
+        this.props.getEvent(this.props.params); 
       }
         deleteButtonClick(){
     this.props.deleteEvent(this.props.params.id)

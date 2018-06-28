@@ -1,9 +1,16 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
+import {reduxForm} from 'redux-form'; 
+
 import dateFns from "date-fns";
 // import Moment from '/moment';
 import {connect} from 'react-redux';
 import {getEvents} from '../actions/index'; 
-import {getEvent} from '../actions/index'; 
+import {getEvent, deleteEvent} from '../actions/index'; 
+import {createEvent} from '../actions/index'; 
+import NewEvent from './NewEvent';
+
+// import NewEvent from './NewEvent';
+
 import {Link} from 'react-router'; 
 import ReactDOM from 'react-dom';
 // import Musix from './Musix'
@@ -275,10 +282,12 @@ var Calendar = React.createClass({
 						<div><i onClick={this.returnPresent} className="fa fa-calendar-o" aria-hidden="true"><span>{this.state.present.getDate()}</span></i></div>
 						<i className="fa fa-search" aria-hidden="true"></i>
 					</div>
+					{/* <div><Musix inputStyle={{
+                        boxSizing: 'border-box'}}/></div> */}
+					
 					<div id="add_entry">
 						<div className="enter_entry">
-							<input type="text" placeholder="Create Event" id="entry_name" />
-							<span id="save_entry" onClick={this.saveEntry.bind(null, this.state.currYear, this.state.currMonthN, this.state.currDay)}>SAVE</span>
+ {/* <NewEventForm /> */}
 						</div>
 						<div className="entry_details">
 							<div>
@@ -292,13 +301,13 @@ var Calendar = React.createClass({
 								<div className="overlay"><div>
 									<p>
 										<span id="entry_title">{this.state.openEntry.entryName}</span>
-										<span id="entry_times">{daysBetween} {this.state.openEntry.entryDuration === "All day" ? "| All day" : "at " + this.state.openEntry.entryDuration + ":00" }</span>
+										{/* <span id="entry_times">{daysBetween} {this.state.openEntry.entryDuration === "All day" ? "| All day" : "at " + this.state.openEntry.entryDuration + ":00" }</span> */}
 									</p>
 								</div></div>
 								<img src={this.state.openEntry.entryImg.readerResult} width="400px" height="300px" />
 							</div>
 							<div className="entry openedEntry"><div>
-								<i className="fa fa-map-marker" aria-hidden="true"></i> {this.state.openEntry.entryLocation ? this.state.openEntry.entryLocation : <span>No location</span>}
+								{/* <i className="fa fa-map-marker" aria-hidden="true"></i> {this.state.openEntry.entryLocation ? this.state.openEntry.entryLocation : <span>No location</span>} */}
 							</div></div>
 							<div className="entry openedEntry noteDiv"><div>
 								<i className="fa fa-pencil" aria-hidden="true"></i> {this.state.openEntry.entryNote ? <span id="note">{this.state.openEntry.entryNote}</span> : <span>No description</span>}
@@ -512,9 +521,9 @@ function mapStateToProps(state){
   return {events: state.events.all } 
 }
 
-var release_date_min = "";
+var release_date_min = "2018" + "05" + "13";
 console.log("hello" + release_date_min)
-var release_date_max = "";
+var release_date_max = "2018" + "05" + "13";
 
 class Musix extends React.Component {
 	constructor() {  
@@ -569,4 +578,4 @@ class Musix extends React.Component {
   }
 
 
-export default Calendar; connect(mapStateToProps, {getEvents: getEvents})(Calendar); 
+export default Calendar; connect(mapStateToProps, {getEvents: getEvents})(Calendar)

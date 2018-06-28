@@ -13,7 +13,7 @@ import SongSearch from '../components/SongSearch';
 
 
 
-const API_URL = "http://localhost:5000/" ; 
+const API_URL = "http://localhost:5000/api/v1" ; 
 
 
 export const nextLyric = (currentSongId) => ({

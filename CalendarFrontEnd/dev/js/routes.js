@@ -15,6 +15,8 @@ export default(
     <Route path="/" component={App}>
       <IndexRoute component={Calendar}/> 
       <Route path="/" component={Musix} />
+      <Route path="/" component={Calendar}/>
+
       <Route path="events/new" component={NewEvent}/>
       <Route path="events/:id" component={SingleEventShow}/>
      
