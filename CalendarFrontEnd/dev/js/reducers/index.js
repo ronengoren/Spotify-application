@@ -21,11 +21,3 @@ const allReducers = combineReducers({
 export default allReducers;
 
   
-  // export default allReducers
-
-  // const rootReducer = combineReducers({
-  //   currentSongId: songChangeReducer,
-  //   songsById: lyricChangeReducer
-  // });
-
-  // export default allReducers;

@@ -12,7 +12,7 @@ import createLogger from 'redux-logger';
 import allReducers from './reducers';
 import rootReducer from './reducers';
 import { connect } from 'react-redux'
-
+import NewEvent from './components/NewEvent'
 import App from './components/App';
 import Calendar from './components/Calendar';
 import {reduxForm} from 'redux-form'; 

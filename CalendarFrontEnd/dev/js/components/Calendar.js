@@ -2,22 +2,18 @@ import React, {Component, PropTypes} from 'react';
 import {reduxForm} from 'redux-form'; 
 
 import dateFns from "date-fns";
-// import Moment from '/moment';
 import {connect} from 'react-redux';
 import {getEvents} from '../actions/index'; 
 import {getEvent, deleteEvent} from '../actions/index'; 
 import {createEvent} from '../actions/index'; 
 import NewEvent from './NewEvent';
-
-// import NewEvent from './NewEvent';
-
+import EventsHome from './EventsHome'
 import {Link} from 'react-router'; 
 import ReactDOM from 'react-dom';
 // import Musix from './Musix'
 import axios from 'axios';
 
 import "../../scss/style.scss";
-
 
 
 var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -109,14 +105,15 @@ var Calendar = React.createClass({
 		this.state.warning = "";
 		var selected_day   = new Date();
 		selected_day.setDate(day);
+		
 
 		var currentMonth   = this.state.dates.nameofmonth;
 		var currentMonthN  = this.state.dates.numberofmonth;
 		var currentYear    = this.state.dates.date.getFullYear();
 		
 		console.log("currDay " + selected_day)
-		
 		return this.setState({today:selected_day, currDay:day, currMonth:currentMonth, currYear:currentYear, currMonthN:currentMonthN});
+		$('#start_date').val(selected_day)
 	},
   returnPresent: function(){
 		if($(".float").hasClass('rotate')){
@@ -135,6 +132,7 @@ var Calendar = React.createClass({
 		this.state.currYear  = "";
 		$(".float").removeClass('rotate');
 		return this.setState({dates:month, today:today});
+
 	},
 	addEntry: function(day){
 		if(this.state.currDay){
@@ -148,8 +146,7 @@ var Calendar = React.createClass({
 	                $("#open_entry").css('display','none');
 	            }, 400);
 				$("#entry_name").val("");
-				$("#entry_note").val("");
-				// reset entry colors
+				$("#entry_date").val("");
 				var resColor = new resetColors();
 				return this.setState(resColor);
 			}else{
@@ -163,7 +160,7 @@ var Calendar = React.createClass({
 
 			}
 		}else{
-			return this.setState({warning:"Select a day to make an entry!"});
+			return this.setState({warning:"Pick some dates!"});
 		}
 	},
 	saveEntry: function(year, month, day){
@@ -171,24 +168,21 @@ var Calendar = React.createClass({
 		if($.trim(entryName).length > 0){
 			var entryTime = new Date();
 			var entryDate = {year,month,day};
-		
-			if($("#entry_note").val()){
-				var entryNote = $("#entry_note").val();
-			}else{var entryNote = ""}
-
-			var entryImg = this.state.file;
-			var entryColor = this.state.dColor;
-			var entry = {entryName,entryDate,entryTime,entryDuration,entryLocation,entryNote,entryColor, entryImg};
+console.log("hey"+ entryDate)
+			var entry = {entryName,entryDate,entryTime};
 			this.state.entries.splice(0,0,entry);
 
 			// clean and close entry page
 			$(".float").removeClass('rotate');
+
 			$("#add_entry").addClass('animated slideOutDown');
 			window.setTimeout( function(){
 	            $("#add_entry").css('display','none');
 	        }, 400);
-			$("#entry_name").val("");
-			$("#entry_note").val("");
+			var babe = $("#entry_name").val("");
+			console.log(babe)
+			$("#entry_date").val("");
+			
 			// reset entry colors
 
 			return (this.setState({entries: this.state.entries}), this.setState(resColor));
@@ -205,7 +199,7 @@ var Calendar = React.createClass({
         }, 400);
         $(".entry").css('background', 'none');
 		$("#entry_name").val("");
-		$("#entry_note").val("");
+		$("#entry_date").val("");
 		return (this.setState({entries: this.state.entries}), this.setState(resColor));
 	},
 	openEntry: function(entry, e){
@@ -260,7 +254,7 @@ var Calendar = React.createClass({
 			}
 			if(this.state.present.getDate() === this.state.openEntry.entryDate.day && this.state.present.getMonth() === this.state.openEntry.entryDate.month && this.state.present.getFullYear() === this.state.openEntry.entryDate.year){
 				daysBetween = "Today";
-				
+
 			}
 		}
 		return(
@@ -282,14 +276,17 @@ var Calendar = React.createClass({
 						<div><i onClick={this.returnPresent} className="fa fa-calendar-o" aria-hidden="true"><span>{this.state.present.getDate()}</span></i></div>
 						<i className="fa fa-search" aria-hidden="true"></i>
 					</div>
-					{/* <div><Musix inputStyle={{
-                        boxSizing: 'border-box'}}/></div> */}
+				
 					
 					<div id="add_entry">
+					
 						<div className="enter_entry">
- {/* <NewEventForm /> */}
 						</div>
 						<div className="entry_details">
+					<div id="create_form">
+
+							hey
+						</div>
 							<div>
 
 							</div>
@@ -297,17 +294,11 @@ var Calendar = React.createClass({
 					</div>
 					{this.state.openEntry ?
 						<div id="open_entry">
-							<div className="entry_img" style={{backgroundColor:this.state.openEntry.entryColor.color}}>
 								<div className="overlay"><div>
 									<p>
-										<span id="entry_title">{this.state.openEntry.entryName}</span>
-										{/* <span id="entry_times">{daysBetween} {this.state.openEntry.entryDuration === "All day" ? "| All day" : "at " + this.state.openEntry.entryDuration + ":00" }</span> */}
 									</p>
 								</div></div>
-								<img src={this.state.openEntry.entryImg.readerResult} width="400px" height="300px" />
-							</div>
 							<div className="entry openedEntry"><div>
-								{/* <i className="fa fa-map-marker" aria-hidden="true"></i> {this.state.openEntry.entryLocation ? this.state.openEntry.entryLocation : <span>No location</span>} */}
 							</div></div>
 							<div className="entry openedEntry noteDiv"><div>
 								<i className="fa fa-pencil" aria-hidden="true"></i> {this.state.openEntry.entryNote ? <span id="note">{this.state.openEntry.entryNote}</span> : <span>No description</span>}
@@ -332,14 +323,19 @@ var Calendar = React.createClass({
 													return;
 												}
 											}.bind(this))}
-											return <li className={day === this.state.today.getDate() ? "today" : null} key={k} style={existEntry} onClick={this.selectedDay.bind(null, day)}>{day}</li>
+											
+										return <li className={day === this.state.today.getDate() ? "today" : null} key={k} style={existEntry} onClick={this.selectedDay.bind(null, day)}>{day}</li>
 										}.bind(this))}
+										
 									</ul>
 								</div>
+								
 							)
+					
+						
 						}.bind(this))}
 					</div>
-							
+
 					{this.state.warning ? 
 						<div className="warning">
 							{this.state.warning}
@@ -351,14 +347,21 @@ var Calendar = React.createClass({
 					<div id="entries">
 						<div className="contain_entries">
 							<div id="entries-header">
-							<div id="musix">
-									<Musix release_date_min={this.props.currDay} />
-									</div>
+						
 								<p className="entryDay">{this.state.currDay} {this.state.currMonth}</p>
 								{this.state.present.getDate() === this.state.currDay && this.state.present.getMonth() === this.state.currMonthN && this.state.present.getFullYear() === this.state.currYear ? <p className="currday">TODAY</p> : null}
 							</div>
+							
+							<div id="musix">
+									<Musix />
+									<div>
+								<EventsHome />		    
+									</div>
+									</div>
+									
 							{this.state.entries != '' ?
 								<div>
+
 									{this.state.entries.map(function(entry, e){
 										count++;
 										var entryFromThisDate = (entry.entryDate.day === this.state.currDay && entry.entryDate.month === this.state.currMonthN && entry.entryDate.year === this.state.currYear ? true : false);
@@ -371,7 +374,6 @@ var Calendar = React.createClass({
 													<div style={style}>
 														<div className="entry_left" onClick={this.openEntry.bind(null, entry, e)}>
 															<p className="entry_event">{entry.entryName}</p>
-															<p className="entry_time">{entry.entryDuration === "All day" ? "All day" : entry.entryDuration + " h" } {entry.entryLocation ? " | " + entry.entryLocation : null}</p>
 														</div>
 														<div className="delete_entry">
 															<i className="fa fa-times" aria-hidden="true" onClick={this.deleteEntry.bind(null,e)}></i>
@@ -385,6 +387,7 @@ var Calendar = React.createClass({
 												done = true;
 												return (
 													<div className="no-entries" key={e}>
+
 														<i className="fa fa-calendar-check-o" aria-hidden="true"></i>
 														<span>No events planned for today</span>
 													</div>
@@ -408,111 +411,7 @@ var Calendar = React.createClass({
 
 ReactDOM.render(<Calendar />, document.getElementById("app"));
 
-(function($, undefined) {
-	$("#all-day").click(function(){
-		if(this.checked){
-			$("#not-all-day").css('display', 'none');
-		}else{
-			$("#not-all-day").css('display', 'block');
-		}
-	});
 
-	$("#click-close").click(function(){
-		$("#menu-content").removeClass('animated slideInLeft');
-		$("#menu-content").addClass('animated slideOutLeft');
-		window.setTimeout( function(){
-            $("#menu").css('display', 'none');
-			$("#menu-content").css('display', 'none');
-			$("#menu-content").removeClass('animated slideOutLeft');
-        }, 500);
-	});
-	
-	$("#entry-img").bind( 'change', function( e ){
-		var label	 = this.nextElementSibling;
-		var fileName = '';
-		if(this.files){
-			fileName = e.target.value.split( '\\' ).pop();
-		}else{
-			fileName = '';
-		}
-		if( fileName != '' ){
-			label.querySelector( 'span' ).innerHTML = fileName;
-		}else{
-			label.querySelector( 'span' ).innerHTML = "Choose an image";
-		}
-	});
-
-  function hypot(x, y) { return Math.sqrt((x * x) + (y * y)); }
-
-  $("button").each(function(el) {
-    var self = $(this),
-        html = self.html();
-
-    self.html("").append($('<div class="btn"/>').html(html));
-  })
-  .append($('<div class="ink-visual-container"/>').append($('<div class="ink-visual-static"/>')))
-
-  .on("mousedown touchstart", function(evt) {
-    event.preventDefault();
-    
-    var self = $(this),
-        container = self.find(".ink-visual-static", true).eq(0);
-
-    if(!container.length) return;
-
-    container.find(".ink-visual").addClass("hide");
-    
-    var rect = this.getBoundingClientRect(),
-        cRect = container[0].getBoundingClientRect(),
-        cx, cy, radius, diam;
-
-        if (event.changedTouches) {
-          cx = event.changedTouches[0].clientX;
-          cy = event.changedTouches[0].clientY;
-        }
-        else {
-          cx = event.clientX;
-          cy = event.clientY;
-        }
-
-    if(self.is(".float")) {
-      var rx = rect.width / 2,
-          ry = rect.height / 2,
-          br = (rx + ry) / 2,
-          mx = rect.left + rx,
-          my = rect.top + ry;
-
-      radius = hypot(cx - mx, cy - my) + br;
-    }
-    diam = radius * 2;
-        
-    var el = $('<div class="ink-visual"/>').width(diam).height(diam)
-    .css("left", cx - cRect.left - radius).css("top", cy - cRect.top - radius)
-    
-    .on("animationend webkitAnimationEnd oanimationend MSAnimationEnd", function() {
-      var self2 = $(this);
-
-      switch(event.animationName) {
-        case "ink-visual-show":
-          if (self.is(":active")) self2.addClass("shown");
-          break;
-
-        case "ink-visual-hide":
-          self2.remove();
-          break;
-      }
-    })
-    
-    .on("touchend", function() { event.preventDefault(); });
-
-    container.append(el);
-  });
-
-  $(window).on("mouseup touchend", function(evt) {
-    $(".ink-visual-static").children(".ink-visual").addClass("hide");
-  })
-  .on("select selectstart", function(evt) { event.preventDefault(); return false; });
-}(jQuery))
 
 
 
@@ -566,16 +465,22 @@ class Musix extends React.Component {
 
 	render() {
 	  return (
-		<div>
-		 {/* <div className="header">This Song was realeased today 90 years ago:</div> */}
+		<div className="musix">
+		<p>This Song was released today 90 years ago:</p>
 		<p>{this.state.albums}</p> 
+
+		<div className="spotifyLink">
+		
+		Listen to this song on Spotify!
   
-		{/* <div className="spotifyLink">Listen to this song on Spotify!</div> */}
-  
-	  </div>
+	  </div><br/>		
+	  <NewEvent />
+
+	  	</div>
+
 	  );
 	}
   }
 
 
-export default Calendar; connect(mapStateToProps, {getEvents: getEvents})(Calendar)
+export default Calendar;

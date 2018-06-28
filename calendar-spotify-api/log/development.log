@@ -9037,3 +9037,1992 @@ puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
 puma (3.11.4) lib/puma/server.rb:446:in `process_client'
 puma (3.11.4) lib/puma/server.rb:306:in `block in run'
 puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "//events" for ::1 at 2018-06-27 19:42:51 -0400
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [POST] "/events"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "//events" for ::1 at 2018-06-27 19:44:17 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/events"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started DELETE "/api/v1/events/3" for ::1 at 2018-06-27 19:47:05 -0400
+Processing by Api::V1::EventsController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (19.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:30
+  [1m[35m (28.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:24
+  [1m[36mEvent Destroy (11.0ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/api/v1/events_controller.rb:24
+  [1m[35m (33.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:24
+Completed 200 OK in 274ms (Views: 0.5ms | ActiveRecord: 221.0ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-27 19:47:17 -0400
+Processing by Api::V1::EventsController#index as */*
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (45.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (155.78ms)
+Completed 200 OK in 346ms (Views: 293.6ms | ActiveRecord: 45.5ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-27 19:47:37 -0400
+Processing by Api::V1::EventsController#create as */*
+  Parameters: {"start_date"=>"2018-07-18", "title"=>"edited Test event 19", "event"=>{"title"=>"edited Test event 19", "start_date"=>"2018-07-18"}}
+Unpermitted parameter: :event
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (94.5ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "edited Test event 19"], ["created_at", "2018-06-27 23:47:37.191122"], ["updated_at", "2018-06-27 23:47:37.191122"], ["start_date", "2018-07-18"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (1.5ms)
+Completed 201 Created in 149ms (Views: 8.0ms | ActiveRecord: 104.3ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-27 19:48:28 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"sdsd", "event"=>{"title"=>"sdsd"}}
+Unpermitted parameter: :event
+  [1m[35m (8.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (1.9ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "sdsd"], ["created_at", "2018-06-27 23:48:28.878141"], ["updated_at", "2018-06-27 23:48:28.878141"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (6.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 201 Created in 36ms (Views: 1.2ms | ActiveRecord: 25.8ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-27 19:51:15 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "event"=>{"title"=>"The Book of Mormon"}}
+Unpermitted parameter: :event
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (17.7ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-27 23:51:15.346185"], ["updated_at", "2018-06-27 23:51:15.346185"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (20.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (6.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (8.32ms)
+Completed 201 Created in 116ms (Views: 12.9ms | ActiveRecord: 47.3ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-27 19:51:41 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"2018-06-02", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"2018-06-02"}}
+Unpermitted parameter: :event
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (8.2ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-27 23:51:41.201685"], ["updated_at", "2018-06-27 23:51:41.201685"], ["start_date", "2018-06-02"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (3.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (9.58ms)
+Completed 201 Created in 70ms (Views: 12.4ms | ActiveRecord: 26.0ms)
+
+
+Started GET "/api/v1/events/[object%20Object]" for ::1 at 2018-06-27 19:55:51 -0400
+Processing by Api::V1::EventsController#show as HTML
+  Parameters: {"id"=>"[object Object]"}
+  [1m[36mEvent Load (13.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:30
+Completed 404 Not Found in 78ms (ActiveRecord: 22.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=[object Object]):
+  
+app/controllers/api/v1/events_controller.rb:30:in `set_event'
+Started GET "/api/v1/events/undefined" for ::1 at 2018-06-27 19:56:03 -0400
+Processing by Api::V1::EventsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mEvent Load (18.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:30
+Completed 404 Not Found in 23ms (ActiveRecord: 18.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=undefined):
+  
+app/controllers/api/v1/events_controller.rb:30:in `set_event'
+Started GET "/api/v1/events/undefined" for ::1 at 2018-06-27 19:56:28 -0400
+Processing by Api::V1::EventsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mEvent Load (8.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:30
+Completed 404 Not Found in 16ms (ActiveRecord: 8.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=undefined):
+  
+app/controllers/api/v1/events_controller.rb:30:in `set_event'
+Started GET "/api/v1/events/undefined" for ::1 at 2018-06-27 19:56:47 -0400
+Processing by Api::V1::EventsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mEvent Load (7.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:30
+Completed 404 Not Found in 8ms (ActiveRecord: 7.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=undefined):
+  
+app/controllers/api/v1/events_controller.rb:30:in `set_event'
+Started GET "/api/v1/events/undefined" for ::1 at 2018-06-27 19:57:01 -0400
+Processing by Api::V1::EventsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:30
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=undefined):
+  
+app/controllers/api/v1/events_controller.rb:30:in `set_event'
+Started POST "/api/v1/events" for ::1 at 2018-06-27 19:57:19 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (28.5ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-27 23:57:19.404797"], ["updated_at", "2018-06-27 23:57:19.404797"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.67ms)
+Completed 201 Created in 71ms (Views: 3.8ms | ActiveRecord: 43.0ms)
+
+
+Started GET "/api/v1/events/undefined" for ::1 at 2018-06-27 20:00:05 -0400
+  [1m[35m (10.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::EventsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mEvent Load (29.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:30
+Completed 404 Not Found in 94ms (ActiveRecord: 79.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=undefined):
+  
+app/controllers/api/v1/events_controller.rb:30:in `set_event'
+Started POST "/api/v1/events" for ::1 at 2018-06-27 20:00:11 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (14.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (31.5ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 00:00:11.464316"], ["updated_at", "2018-06-28 00:00:11.464316"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (3.09ms)
+Completed 201 Created in 105ms (Views: 32.0ms | ActiveRecord: 55.5ms)
+
+
+Started GET "/api/v1/events/undefined" for ::1 at 2018-06-27 20:01:37 -0400
+Processing by Api::V1::EventsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:30
+Completed 404 Not Found in 3ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=undefined):
+  
+app/controllers/api/v1/events_controller.rb:30:in `set_event'
+Started GET "/api/v1/events/undefined" for ::1 at 2018-06-27 20:02:58 -0400
+Processing by Api::V1::EventsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:30
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=undefined):
+  
+app/controllers/api/v1/events_controller.rb:30:in `set_event'
+Started GET "/api/v1/events/undefined" for ::1 at 2018-06-27 20:03:24 -0400
+Processing by Api::V1::EventsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:30
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=undefined):
+  
+app/controllers/api/v1/events_controller.rb:30:in `set_event'
+Started GET "/api/v1/events/undefined" for ::1 at 2018-06-27 20:03:33 -0400
+Processing by Api::V1::EventsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/events_controller.rb:30
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=undefined):
+  
+app/controllers/api/v1/events_controller.rb:30:in `set_event'
+Started POST "/api/v1/events" for ::1 at 2018-06-27 21:01:49 -0400
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (27.1ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 01:01:51.280084"], ["updated_at", "2018-06-28 01:01:51.280084"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (21.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (2.92ms)
+Completed 201 Created in 162ms (Views: 47.4ms | ActiveRecord: 98.4ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-27 21:01:53 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (2.0ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 01:01:53.066981"], ["updated_at", "2018-06-28 01:01:53.066981"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.2ms)
+Completed 201 Created in 29ms (Views: 0.9ms | ActiveRecord: 12.8ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-27 21:02:07 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon2", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon2", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (2.7ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon2"], ["created_at", "2018-06-28 01:02:07.903323"], ["updated_at", "2018-06-28 01:02:07.903323"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.16ms)
+Completed 201 Created in 20ms (Views: 0.7ms | ActiveRecord: 13.6ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-27 21:18:54 -0400
+Started POST "/api/v1/events" for ::1 at 2018-06-27 21:19:05 -0400
+Started POST "/api/v1/events" for ::1 at 2018-06-27 21:19:05 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon3", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon3", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (5.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (30.8ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon3"], ["created_at", "2018-06-28 01:19:05.510554"], ["updated_at", "2018-06-28 01:19:05.510554"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (15.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (5.01ms)
+Completed 201 Created in 124ms (Views: 10.1ms | ActiveRecord: 142.3ms)
+
+
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon3", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon3", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon3", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon3", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (2.5ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon3"], ["created_at", "2018-06-28 01:19:05.729578"], ["updated_at", "2018-06-28 01:19:05.729578"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon3"], ["created_at", "2018-06-28 01:19:05.731190"], ["updated_at", "2018-06-28 01:19:05.731190"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.18ms)
+Completed 201 Created in 27ms (Views: 2.2ms | ActiveRecord: 9.6ms)
+
+
+  [1m[35m (11.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.16ms)
+Completed 201 Created in 28ms (Views: 2.5ms | ActiveRecord: 20.5ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-27 21:19:14 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon3", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon3", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon3"], ["created_at", "2018-06-28 01:19:14.645390"], ["updated_at", "2018-06-28 01:19:14.645390"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (23.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 201 Created in 40ms (Views: 1.3ms | ActiveRecord: 28.0ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-27 21:20:55 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon4", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon4", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (11.2ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon4"], ["created_at", "2018-06-28 01:20:55.094550"], ["updated_at", "2018-06-28 01:20:55.094550"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (14.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (2.68ms)
+Completed 201 Created in 45ms (Views: 4.1ms | ActiveRecord: 27.8ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-27 22:31:57 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon5", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon5", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (9.7ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon5"], ["created_at", "2018-06-28 02:31:57.693859"], ["updated_at", "2018-06-28 02:31:57.693859"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (9.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (1.08ms)
+Completed 201 Created in 157ms (Views: 8.2ms | ActiveRecord: 20.9ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-27 22:37:09 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (3.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (6.9ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 02:37:09.392366"], ["updated_at", "2018-06-28 02:37:09.392366"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (1.83ms)
+Completed 201 Created in 245ms (Views: 7.3ms | ActiveRecord: 25.3ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-27 22:47:19 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"we", "start_date"=>"19/6/2018", "event"=>{"title"=>"we", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (9.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (5.8ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "we"], ["created_at", "2018-06-28 02:47:19.631630"], ["updated_at", "2018-06-28 02:47:19.631630"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (1.2ms)
+Completed 201 Created in 68ms (Views: 5.9ms | ActiveRecord: 24.6ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-27 22:48:47 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (4.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (6.1ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 02:48:48.028310"], ["updated_at", "2018-06-28 02:48:48.028310"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.73ms)
+Completed 201 Created in 125ms (Views: 1.5ms | ActiveRecord: 18.5ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-27 22:49:58 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"we", "start_date"=>"19/6/2018", "event"=>{"title"=>"we", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "we"], ["created_at", "2018-06-28 02:49:58.526047"], ["updated_at", "2018-06-28 02:49:58.526047"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (3.78ms)
+Completed 201 Created in 81ms (Views: 15.5ms | ActiveRecord: 7.5ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-27 23:53:49 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon222", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon222", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (21.2ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon222"], ["created_at", "2018-06-28 03:53:50.081811"], ["updated_at", "2018-06-28 03:53:50.081811"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (11.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (1.19ms)
+Completed 201 Created in 249ms (Views: 58.8ms | ActiveRecord: 36.8ms)
+
+
+Started GET "/" for ::1 at 2018-06-28 00:28:52 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (62.0ms)
+Completed 200 OK in 211ms (Views: 145.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 00:29:01 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (10.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.09ms)
+Completed 200 OK in 50ms (Views: 38.9ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/" for ::1 at 2018-06-28 00:39:39 -0400
+  [1m[35m (19.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (5.9ms)
+Completed 200 OK in 27ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 02:51:50 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"sdsdsd", "event"=>{"title"=>"sdsdsd"}}
+Unpermitted parameter: :event
+  [1m[35m (6.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (37.2ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "sdsdsd"], ["created_at", "2018-06-28 06:51:52.774850"], ["updated_at", "2018-06-28 06:51:52.774850"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (22.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (8.36ms)
+Completed 201 Created in 548ms (Views: 133.0ms | ActiveRecord: 210.2ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 03:11:46 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (25.2ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 07:11:47.051728"], ["updated_at", "2018-06-28 07:11:47.051728"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (11.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (3.52ms)
+Completed 201 Created in 166ms (Views: 14.4ms | ActiveRecord: 38.5ms)
+
+
+Started GET "/api/v1/events.json" for ::1 at 2018-06-28 04:17:13 -0400
+Processing by Api::V1::EventsController#index as JSON
+  [1m[36mEvent Load (30.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (46.82ms)
+Completed 200 OK in 2028ms (Views: 1962.2ms | ActiveRecord: 30.7ms)
+
+
+Started GET "/api/v1/events.json" for ::1 at 2018-06-28 04:17:15 -0400
+Processing by Api::V1::EventsController#index as JSON
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (33.35ms)
+Completed 200 OK in 75ms (Views: 70.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/events.json" for ::1 at 2018-06-28 04:44:52 -0400
+Processing by Api::V1::EventsController#index as JSON
+  [1m[36mEvent Load (314.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (63.6ms)
+Completed 200 OK in 586ms (Views: 229.9ms | ActiveRecord: 314.8ms)
+
+
+Started GET "/api/v1/events.json" for ::1 at 2018-06-28 04:44:53 -0400
+Processing by Api::V1::EventsController#index as JSON
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (37.07ms)
+Completed 200 OK in 59ms (Views: 52.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/events.json" for ::1 at 2018-06-28 04:46:58 -0400
+Processing by Api::V1::EventsController#index as JSON
+  [1m[36mEvent Load (6.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (86.61ms)
+Completed 200 OK in 180ms (Views: 169.6ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/api/v1/events.json" for ::1 at 2018-06-28 04:46:58 -0400
+Processing by Api::V1::EventsController#index as JSON
+  [1m[36mEvent Load (140.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (78.65ms)
+Completed 200 OK in 280ms (Views: 127.2ms | ActiveRecord: 140.2ms)
+
+
+Started GET "/api/v1/events.json" for ::1 at 2018-06-28 04:47:05 -0400
+Processing by Api::V1::EventsController#index as JSON
+  [1m[36mEvent Load (10.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (105.68ms)
+Completed 200 OK in 175ms (Views: 159.4ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/api/v1/events.json" for ::1 at 2018-06-28 04:47:05 -0400
+Processing by Api::V1::EventsController#index as JSON
+  [1m[36mEvent Load (6.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (66.96ms)
+Completed 200 OK in 133ms (Views: 109.0ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/api/v1/events.json" for ::1 at 2018-06-28 04:47:27 -0400
+Processing by Api::V1::EventsController#index as JSON
+  [1m[36mEvent Load (7.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (81.22ms)
+Completed 200 OK in 150ms (Views: 133.4ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/api/v1/events.json" for ::1 at 2018-06-28 04:47:28 -0400
+Processing by Api::V1::EventsController#index as JSON
+  [1m[36mEvent Load (9.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (84.92ms)
+Completed 200 OK in 121ms (Views: 112.0ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/api/v1/events.json" for ::1 at 2018-06-28 04:47:37 -0400
+Processing by Api::V1::EventsController#index as JSON
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (48.11ms)
+Completed 200 OK in 82ms (Views: 76.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/events.json" for ::1 at 2018-06-28 04:47:37 -0400
+Processing by Api::V1::EventsController#index as JSON
+  [1m[36mEvent Load (8.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (53.69ms)
+Completed 200 OK in 78ms (Views: 69.4ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/api/v1/events.json" for ::1 at 2018-06-28 04:51:46 -0400
+Processing by Api::V1::EventsController#index as JSON
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (159.55ms)
+Completed 200 OK in 238ms (Views: 231.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/events.json" for ::1 at 2018-06-28 04:52:16 -0400
+Processing by Api::V1::EventsController#index as JSON
+  [1m[36mEvent Load (3.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13.33ms)
+Completed 200 OK in 558ms (Views: 546.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/v1/events.json" for ::1 at 2018-06-28 04:52:36 -0400
+Processing by Api::V1::EventsController#index as JSON
+  [1m[36mEvent Load (8.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (25.46ms)
+Completed 200 OK in 46ms (Views: 37.4ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/api/v1/events.json" for ::1 at 2018-06-28 04:53:05 -0400
+Processing by Api::V1::EventsController#index as JSON
+  [1m[36mEvent Load (11.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (30.49ms)
+Completed 200 OK in 72ms (Views: 60.1ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 04:54:02 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.43ms)
+Completed 200 OK in 33ms (Views: 26.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 04:55:04 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (13.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (25.42ms)
+Completed 200 OK in 50ms (Views: 36.2ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 04:56:06 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (20.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.71ms)
+Completed 200 OK in 41ms (Views: 19.6ms | ActiveRecord: 20.4ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 04:56:53 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (14.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.88ms)
+Completed 200 OK in 55ms (Views: 33.6ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 04:57:20 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (4.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.0ms)
+Completed 200 OK in 37ms (Views: 31.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:04:53 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (63.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (31.96ms)
+Completed 200 OK in 158ms (Views: 89.9ms | ActiveRecord: 63.7ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:05:58 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (74.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.96ms)
+Completed 200 OK in 357ms (Views: 84.1ms | ActiveRecord: 242.2ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:06:07 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.88ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:13:20 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (7.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (23.37ms)
+Completed 200 OK in 142ms (Views: 106.8ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:13:49 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (3.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (22.5ms)
+Completed 200 OK in 106ms (Views: 99.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:27:54 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (2.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (60.9ms)
+Completed 200 OK in 161ms (Views: 147.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:31:55 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (14.6ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (49.24ms)
+Completed 200 OK in 183ms (Views: 157.2ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:32:47 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (12.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (61.72ms)
+Completed 200 OK in 150ms (Views: 125.8ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:34:58 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (59.52ms)
+Completed 200 OK in 121ms (Views: 116.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:35:03 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (19.63ms)
+Completed 200 OK in 51ms (Views: 49.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:36:44 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (49.42ms)
+Completed 200 OK in 77ms (Views: 75.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:37:16 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (101.73ms)
+Completed 200 OK in 132ms (Views: 123.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:37:36 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (32.66ms)
+Completed 200 OK in 52ms (Views: 49.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:38:16 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (6.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.4ms)
+Completed 200 OK in 48ms (Views: 41.1ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:42:23 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (30.36ms)
+Completed 200 OK in 66ms (Views: 58.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:42:50 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (8.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (35.2ms)
+Completed 200 OK in 65ms (Views: 55.6ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:45:06 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (28.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (23.22ms)
+Completed 200 OK in 70ms (Views: 38.7ms | ActiveRecord: 28.8ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:46:45 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (7.7ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (24.92ms)
+Completed 200 OK in 95ms (Views: 67.4ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:47:19 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (4.9ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.64ms)
+Completed 200 OK in 42ms (Views: 33.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:47:36 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.98ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:47:52 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (3.7ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.33ms)
+Completed 200 OK in 23ms (Views: 18.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:48:22 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (6.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (18.01ms)
+Completed 200 OK in 36ms (Views: 28.5ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:48:24 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.77ms)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 05:49:15 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (17.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (52.4ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 09:49:15.802021"], ["updated_at", "2018-06-28 09:49:15.802021"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (16.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 201 Created in 244ms (Views: 4.0ms | ActiveRecord: 86.3ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:51:03 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (37.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (29.46ms)
+Completed 200 OK in 95ms (Views: 53.3ms | ActiveRecord: 37.2ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:53:11 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (11.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (111.91ms)
+Completed 200 OK in 181ms (Views: 165.9ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:54:17 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (2.9ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (17.27ms)
+Completed 200 OK in 56ms (Views: 44.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:57:43 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (11.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (29.7ms)
+Completed 200 OK in 96ms (Views: 77.2ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:58:15 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (12.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (30.34ms)
+Completed 200 OK in 84ms (Views: 67.1ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:58:37 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (25.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (24.79ms)
+Completed 200 OK in 86ms (Views: 59.7ms | ActiveRecord: 25.4ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 05:59:33 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (6.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (21.31ms)
+Completed 200 OK in 55ms (Views: 47.6ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:00:17 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (3.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.25ms)
+Completed 200 OK in 16ms (Views: 12.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:00:23 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (6.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (22.36ms)
+Completed 200 OK in 40ms (Views: 33.3ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:00:48 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.7ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:00:52 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (2.7ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.58ms)
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:01:10 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.68ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:01:21 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.55ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:03:36 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.67ms)
+Completed 200 OK in 185ms (Views: 178.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:04:04 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (18.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.53ms)
+Completed 200 OK in 47ms (Views: 28.0ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:21:35 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.58ms)
+Completed 200 OK in 107ms (Views: 88.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:21:59 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (29.88ms)
+Completed 200 OK in 50ms (Views: 45.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:22:13 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (2.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.54ms)
+Completed 200 OK in 21ms (Views: 18.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:22:35 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.06ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:22:51 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.29ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:23:15 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.45ms)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:23:16 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.93ms)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:24:43 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (3.9ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (19.06ms)
+Completed 200 OK in 112ms (Views: 108.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:25:01 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (7.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 200 OK in 17ms (Views: 5.4ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:25:16 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.08ms)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:27:58 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (18.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.1ms)
+Completed 200 OK in 38ms (Views: 15.0ms | ActiveRecord: 18.1ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:28:15 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (4.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.29ms)
+Completed 200 OK in 65ms (Views: 51.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:30:38 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 06:30:42 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (18.7ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 10:30:42.481097"], ["updated_at", "2018-06-28 10:30:42.481097"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (16.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.53ms)
+Completed 201 Created in 151ms (Views: 6.6ms | ActiveRecord: 36.3ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 06:31:04 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.43ms)
+Completed 200 OK in 15ms (Views: 12.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:07:04 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (19.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (50.08ms)
+Completed 200 OK in 239ms (Views: 172.0ms | ActiveRecord: 19.2ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:26:46 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (7.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.17ms)
+Completed 200 OK in 59ms (Views: 36.8ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 07:26:53 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (25.9ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 11:26:53.998459"], ["updated_at", "2018-06-28 11:26:53.998459"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (38.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (3.82ms)
+Completed 201 Created in 233ms (Views: 20.1ms | ActiveRecord: 66.4ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:27:26 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.31ms)
+Completed 200 OK in 53ms (Views: 51.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:28:42 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (3.9ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.21ms)
+Completed 200 OK in 25ms (Views: 21.2ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 07:28:49 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"2018-06-02", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"2018-06-02"}}
+Unpermitted parameter: :event
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (6.7ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 11:28:49.890792"], ["updated_at", "2018-06-28 11:28:49.890792"], ["start_date", "2018-06-02"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (1.38ms)
+Completed 201 Created in 76ms (Views: 3.8ms | ActiveRecord: 14.6ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 07:28:57 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"2018-06-02", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"2018-06-02"}}
+Unpermitted parameter: :event
+  [1m[35m (3.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 11:28:57.777398"], ["updated_at", "2018-06-28 11:28:57.777398"], ["start_date", "2018-06-02"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.73ms)
+Completed 201 Created in 49ms (Views: 1.9ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:31:01 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (22.74ms)
+Completed 200 OK in 66ms (Views: 56.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:31:54 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.81ms)
+Completed 200 OK in 25ms (Views: 21.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 07:31:58 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (7.0ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 11:31:58.580620"], ["updated_at", "2018-06-28 11:31:58.580620"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (9.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (9.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.82ms)
+Completed 201 Created in 110ms (Views: 4.4ms | ActiveRecord: 27.0ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 07:32:06 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (32.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (6.5ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 11:32:06.522019"], ["updated_at", "2018-06-28 11:32:06.522019"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (6.83ms)
+Completed 201 Created in 152ms (Views: 7.7ms | ActiveRecord: 45.8ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:33:17 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (4.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.21ms)
+Completed 200 OK in 25ms (Views: 20.2ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:33:28 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (2.7ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.85ms)
+Completed 200 OK in 27ms (Views: 23.3ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 07:33:32 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 11:33:32.503034"], ["updated_at", "2018-06-28 11:33:32.503034"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (10.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (3.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 201 Created in 29ms (Views: 4.5ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:33:37 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (21.58ms)
+Completed 200 OK in 40ms (Views: 38.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 07:33:45 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 11:33:45.464076"], ["updated_at", "2018-06-28 11:33:45.464076"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.15ms)
+Completed 201 Created in 29ms (Views: 0.5ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:34:12 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (21.6ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (119.06ms)
+Completed 200 OK in 237ms (Views: 198.7ms | ActiveRecord: 21.6ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 07:34:17 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (3.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (2.9ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 11:34:17.623701"], ["updated_at", "2018-06-28 11:34:17.623701"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (97.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.81ms)
+Completed 201 Created in 359ms (Views: 7.8ms | ActiveRecord: 104.0ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:34:41 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (40.31ms)
+Completed 200 OK in 99ms (Views: 91.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 07:34:52 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (3.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 11:34:52.684651"], ["updated_at", "2018-06-28 11:34:52.684651"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 201 Created in 454ms (Views: 2.4ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:35:36 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (8.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (38.1ms)
+Completed 200 OK in 98ms (Views: 85.7ms | ActiveRecord: 8.4ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 07:35:40 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (18.7ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 11:35:40.837414"], ["updated_at", "2018-06-28 11:35:40.837414"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (6.74ms)
+Completed 201 Created in 59ms (Views: 7.6ms | ActiveRecord: 26.6ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:35:57 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (50.96ms)
+Completed 200 OK in 80ms (Views: 76.9ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 07:36:02 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 11:36:02.084955"], ["updated_at", "2018-06-28 11:36:02.084955"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.17ms)
+Completed 201 Created in 56ms (Views: 0.7ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:36:34 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (43.26ms)
+Completed 200 OK in 66ms (Views: 65.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 07:36:38 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 11:36:38.607176"], ["updated_at", "2018-06-28 11:36:38.607176"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (1.29ms)
+Completed 201 Created in 35ms (Views: 3.6ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:36:56 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (6.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.05ms)
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 07:37:00 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 11:37:00.350612"], ["updated_at", "2018-06-28 11:37:00.350612"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (7.25ms)
+Completed 201 Created in 34ms (Views: 8.0ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:37:56 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (8.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.04ms)
+Completed 200 OK in 16ms (Views: 7.3ms | ActiveRecord: 8.8ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 07:38:00 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (10.5ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 11:38:00.997839"], ["updated_at", "2018-06-28 11:38:00.997839"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+Completed 201 Created in 27ms (Views: 1.3ms | ActiveRecord: 18.1ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:38:12 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (5.9ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.49ms)
+Completed 200 OK in 24ms (Views: 17.6ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 07:38:18 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 11:38:18.029781"], ["updated_at", "2018-06-28 11:38:18.029781"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.19ms)
+Completed 201 Created in 21ms (Views: 0.7ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:39:46 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.63ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 07:39:51 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 11:39:51.888814"], ["updated_at", "2018-06-28 11:39:51.888814"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+Completed 201 Created in 15ms (Views: 1.4ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:40:33 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (7.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.31ms)
+Completed 200 OK in 28ms (Views: 16.1ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 07:40:37 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (1.2ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 11:40:37.151703"], ["updated_at", "2018-06-28 11:40:37.151703"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+Completed 201 Created in 32ms (Views: 1.5ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:42:40 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (3.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.96ms)
+Completed 200 OK in 65ms (Views: 49.8ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 07:42:44 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (9.9ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 11:42:44.570407"], ["updated_at", "2018-06-28 11:42:44.570407"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 201 Created in 49ms (Views: 1.0ms | ActiveRecord: 17.7ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 07:43:03 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 11:43:03.221512"], ["updated_at", "2018-06-28 11:43:03.221512"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.53ms)
+Completed 201 Created in 44ms (Views: 5.9ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:44:57 -0400
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (10.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.43ms)
+Completed 200 OK in 18ms (Views: 7.1ms | ActiveRecord: 10.5ms)
+
+
+Started POST "/api/v1/events" for ::1 at 2018-06-28 07:45:02 -0400
+Processing by Api::V1::EventsController#create as HTML
+  Parameters: {"title"=>"The Book of Mormon", "start_date"=>"19/6/2018", "event"=>{"title"=>"The Book of Mormon", "start_date"=>"19/6/2018"}}
+Unpermitted parameter: :event
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[36mEvent Create (6.2ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Book of Mormon"], ["created_at", "2018-06-28 11:45:02.655639"], ["updated_at", "2018-06-28 11:45:02.655639"], ["start_date", "2018-06-19"]]
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (16.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/events_controller.rb:12
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (0.16ms)
+Completed 201 Created in 32ms (Views: 0.6ms | ActiveRecord: 23.2ms)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6264477628180529835)[0m
+  ↳ bin/rails:9
+  [1m[35m (11.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateTable (20180628114725)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (328.8ms)[0m  [1m[35mCREATE TABLE "tables" ("id" bigserial primary key, "end_date" date)[0m
+  ↳ db/migrate/20180628114725_create_table.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180628114725"]]
+  ↳ bin/rails:9
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (12.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(6264477628180529835)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6264477628180529835)[0m
+  ↳ bin/rails:9
+  [1m[35m (8.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateTableEndDate (20180628115134)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.5ms)[0m  [1m[35mALTER TABLE "events" ADD "end_date" date[0m
+  ↳ db/migrate/20180628115134_create_table_end_date.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180628115134"]]
+  ↳ bin/rails:9
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6264477628180529835)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mEvent Create (1.2ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Brunch with thr guys"], ["created_at", "2018-06-28 11:58:14.362241"], ["updated_at", "2018-06-28 11:58:14.362241"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (17.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Vacay!"], ["created_at", "2018-06-28 11:58:14.386621"], ["updated_at", "2018-06-28 11:58:14.386621"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "My turn to wash dishes :("], ["created_at", "2018-06-28 11:58:14.393141"], ["updated_at", "2018-06-28 11:58:14.393141"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Renew Insurance"], ["created_at", "2018-06-28 11:58:14.399812"], ["updated_at", "2018-06-28 11:58:14.399812"], ["start_date", "2018-11-06"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date", "end_date") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Call mom"], ["created_at", "2018-06-28 11:58:14.409564"], ["updated_at", "2018-06-28 11:58:14.409564"], ["start_date", "2018-01-06"], ["end_date", "2018-01-06"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+Started GET "/api/v1/events" for ::1 at 2018-06-28 07:59:00 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nycda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::EventsController#index as HTML
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."start_date" ASC[0m
+  ↳ app/controllers/api/v1/events_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.21ms)
+Completed 200 OK in 63ms (Views: 47.6ms | ActiveRecord: 5.2ms)
+
+
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (370.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "calendar-spotify-api_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (353.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "calendar-spotify-api_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (1262.6ms)[0m  [1m[35mCREATE DATABASE "calendar-spotify-api_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1182.2ms)[0m  [1m[35mCREATE DATABASE "calendar-spotify-api_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (25.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (4.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "events" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (267.9ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "start_date" date, "end_date" date)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "tables" CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (55.7ms)[0m  [1m[35mCREATE TABLE "tables" ("id" bigserial primary key, "end_date" date)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (14.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (6.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180628115134)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (6.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180622183350),
+(20180624224927),
+(20180628114725);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (20.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (6.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (7.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-06-28 12:01:02.450438"], ["updated_at", "2018-06-28 12:01:02.450438"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.9ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "events" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (43.0ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "start_date" date, "end_date" date)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "tables" CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (17.5ms)[0m  [1m[35mCREATE TABLE "tables" ("id" bigserial primary key, "end_date" date)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (31.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180628115134)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180622183350),
+(20180624224927),
+(20180628114725);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-06-28 12:01:02.746016"], ["updated_at", "2018-06-28 12:01:02.746016"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-06-28 12:01:02.755646"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mEvent Create (1.2ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Brunch with thr guys"], ["created_at", "2018-06-28 12:01:02.853338"], ["updated_at", "2018-06-28 12:01:02.853338"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Vacay!"], ["created_at", "2018-06-28 12:01:02.864417"], ["updated_at", "2018-06-28 12:01:02.864417"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "My turn to wash dishes :("], ["created_at", "2018-06-28 12:01:02.870794"], ["updated_at", "2018-06-28 12:01:02.870794"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Renew Insurance"], ["created_at", "2018-06-28 12:01:02.880473"], ["updated_at", "2018-06-28 12:01:02.880473"], ["start_date", "2018-11-06"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("title", "created_at", "updated_at", "start_date", "end_date") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Call mom"], ["created_at", "2018-06-28 12:01:02.886853"], ["updated_at", "2018-06-28 12:01:02.886853"], ["start_date", "2018-01-06"], ["end_date", "2018-01-06"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12

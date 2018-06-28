@@ -1,43 +1,43 @@
-import React, {Component} from 'react';
+import React from 'react';
+import axios from 'axios';
 import {connect} from 'react-redux';
 import {getEvents} from '../actions/index'; 
+
 import {Link} from 'react-router'; 
-import "../../scss/style.scss";
+// import "../../scss/style.scss";
 
-
-class EventsHome extends Component {
-    componentWillMount(){
-        this.props.getEvents();  
-      } 
-      renderEvents(){
-        return this.props.events.map((event) => {
-          return (
-            <li key={event.id}> 
-              <Link to={"events/" + event.id }>
-                <h4> {event.title} </h4> 
-              </Link> 
-            </li> 
-          )
-        });
-      }
-    render() {
-        return(
-            <div className="container">
-      
-            <div>
-            <Link to="events/new" className="btn btn-warning">
-            Create Event
-            </Link> 
-            </div>
-      
-            Event Home Page
-            <ul className="list-group">
-            {this.renderEvents()}
-            </ul>
-            </div>
-          );
+class EventsHome extends React.Component{
+	constructor(props){
+        super(props)
+        this.state = {
+            events: []
         }
-      }
+    }
+	componentDidMount() {
+        axios.get('http://localhost:5000/api/v1/events')
+        .then(response => {
+            console.log(response)
+            this.setState({
+                events: response.data
+            })
+        })
+        .catch(error => console.log(error))
+    }
+    render() {
+        return (
+            <div className="lists-container">
+                {this.state.events.map( list => {
+                    return (
+                        <div className="single-list" key={list.start_day}>
+                            <h4>Description: {list.title}</h4>
+                            <p>Start Date: {list.start_date}</p>
+                        </div>
+                    )
+                })}
+            </div>
+        )
+    }
+}
 
       function mapStateToProps(state){
         return {events: state.events.all } 

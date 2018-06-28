@@ -7,6 +7,7 @@ import SingleEventShow from './components/SingleEventShow';
 import Musix from './components/Calendar';
 import rootReducer from './reducers';
 import { Provider } from 'react-redux';
+import EventsHome from './components/Calendar';
 
 
 
@@ -14,11 +15,13 @@ import { Provider } from 'react-redux';
 export default(
     <Route path="/" component={App}>
       <IndexRoute component={Calendar}/> 
-      <Route path="/" component={Musix} />
-      <Route path="/" component={Calendar}/>
+      {/* <Route path="/" component={Musix} /> */}
+      <Route path="/events" component={EventsHome}/>
+      {/* <Route path="events" component={EventsHome}/> */}
 
       <Route path="events/new" component={NewEvent}/>
-      <Route path="events/:id" component={SingleEventShow}/>
+      <Route path="events/:id" component={Calendar}/>
+
      
 
     </Route>
