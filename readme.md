@@ -3,7 +3,7 @@
 
 A small brief about this project.
 
-This my first project ever in ReactJS. Right after I received the assignment I did a lot of reasearch on which language has the best approach to achieve what I wanted, so I decided to take a risk so I self taught my self with this new platform fot the past 2 weeks.
+This my first project ever in ReactJS. Right after I received the assignment I did a lot of reasearch on which language has the best approach to achieve what I wanted, so I decided to take a risk so I self taught my self with this new platform for the past 2 weeks.
 
 This project unfortunately haven’t reached to its limits in terms of the assignment, BUT, has its own achievements I believe.
 
