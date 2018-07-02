@@ -1,4 +1,4 @@
-This site was built using [GitHub Pages](https://pages.github.com/).
+This site was built using [Heroku](https://playdates-calendar-frontend.herokuapp.com/), and still in deploying proccess (as of 07/02/2018)
 # Hello Spotify!
 
 A small brief about this project.
