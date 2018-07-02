@@ -1,4 +1,4 @@
-This site was built using [Heroku](https://playdates-calendar-frontend.herokuapp.com/), and still in deploying proccess (as of 07/02/2018)
+This site was built using [Heroku](https://playdates-calendar-frontend.herokuapp.com/), and still in deploying proccess (as of 07/02/2018). PLEASE ENABLE CROSS-ORIGIN RESOURCE SHARING
 # Hello Spotify!
 
 A small brief about this project.
